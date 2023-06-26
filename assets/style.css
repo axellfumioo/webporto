@@ -1,33 +1,33 @@
 .card {
      transition: all 0.3s ease;
 }
- .card:hover {
+.card:hover {
      transform: scale(1.05);
 }
- .wrapper {
+.wrapper {
      height: 100vh;
      width: auto;
      display: flex;
      justify-content: center;
      align-items: center;
 }
- .effect-wrapper {
+.effect-wrapper {
      text-align: center;
      font-weight: normal;
 }
- #typed {
+#typed {
      font-weight: bold;
      color: #00bdff;
 }
- .cursor {
+.cursor {
      display: inline-block;
      background-color: #b0ff95;
      animation: blinker 800ms infinite;
 }
- .cursor.typing-true {
+.cursor.typing-true {
      animation: none;
 }
- @keyframes blinker {
+@keyframes blinker {
      0% {
          background-color: #00aeff;
     }
@@ -39,18 +39,18 @@
     }
 }
 /* width */
- ::-webkit-scrollbar {
+::-webkit-scrollbar {
      width: 10px;
 }
 /* Track */
- ::-webkit-scrollbar-track {
+::-webkit-scrollbar-track {
      background-color: rgb(23, 31, 49);
 }
 /* Handle */
- ::-webkit-scrollbar-thumb {
+::-webkit-scrollbar-thumb {
      background-color: rgb(41, 49, 67);
 }
 /* Handle on hover */
- ::-webkit-scrollbar-thumb:hover {
+::-webkit-scrollbar-thumb:hover {
      background-color: rgb(38, 43, 54);
 }
