@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="axellFumioo - Portfolio" property="og:title" />
+    <meta content="Welcome to axellFumioo portofolio." property="og:description" />
+    <meta content="https://axellfumioo.my.id" property="og:url" />
+    <meta content="https://cdn.discordapp.com/attachments/879705257045803090/1122875331020337262/image.png" property="og:image" />
+    <meta content="#00004d" data-react-helmet="true" name="theme-color" />
+    <title>axellFumioo - Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://kit.fontawesome.com/c1cbeb7f83.js" crossorigin="anonymous"></script>
+    <script src="assets/script.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cabin&family=Kanit:wght@300&family=Montserrat+Alternates:wght@700&display=swap');
+    </style>
+    <style src="assets/style.css"></style>
+</head>
+
+<body class="bg-gray-200">
+    <nav class="sticky top-0 h-16 px-4 py-4 flex justify-between items-center bg-black">
+        <div class="lg:hidden">
+            <button class="navbar-burger flex items-center text-blue-600 p-3">
+                <svg class="block h-4 w-4 fill-current" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                    <title>Mobile menu</title>
+                    <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
+                </svg>
+            </button>
+        </div>
+        <ul
+            class="hidden absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2 lg:mx-auto lg:flex lg:items-center lg:w-auto lg:space-x-6">
+            <li><a style="font-family: 'Kanit', sans-serif;"
+                    class="transition duration-150 ease-in-out text-sm text-gray-100 hover:text-gray-500"
+                    href="#homes"><i class="text-xs fa-solid fa-house"></i>
+                    &nbsp;HOME</a></li>
+            <i class="text-gray-300 fa-solid fa-ellipsis-vertical text-sm"></i>
+            <li><a style="font-family: 'Kanit', sans-serif;"
+                    class="transition duration-150 ease-in-out text-sm text-gray-100 hover:text-gray-500"
+                    href="#about"><i class="text-xs fa-solid fa-user"></i>
+                    &nbsp;ABOUT ME</a></li>
+            <i class="text-gray-300 fa-solid fa-ellipsis-vertical text-sm"></i>
+            <li><a style="font-family: 'Kanit', sans-serif;"
+                    class="transition duration-150 ease-in-out text-sm text-gray-100 hover:text-gray-500"
+                    href="#projects"><i class="text-xs fa-solid fa-folder-open"></i> &nbsp;PROJECTS</a></li>
+            <i class="text-gray-300 fa-solid fa-ellipsis-vertical text-sm"></i>
+            <li><a style="font-family: 'Kanit', sans-serif;"
+                    class="transition duration-150 ease-in-out text-sm text-gray-100 hover:text-gray-500"
+                    href="#contact"><i class="text-xs fa-solid fa-phone"></i> &nbsp;CONTACT</a></li>
+        </ul>
+    </nav>
+    <div class="navbar-menu relative z-50 hidden">
+        <div class="navbar-backdrop fixed inset-0 bg-gray-800 opacity-25"></div>
+        <nav
+            class="fixed top-0 left-0 bottom-0 flex flex-col w-5/6 max-w-sm py-6 px-6 bg-gray-900 border-r overflow-y-auto">
+            <div class="flex items-center mb-8">
+                <button class="navbar-close">
+                    <i class="fa-solid fa-x text-gray-300"></i>
+                </button>
+            </div>
+            <div>
+                <ul>
+                    <li class="mb-1">
+                        <a style="font-family: 'Kanit', sans-serif;"
+                            class="transition duration-300 ease-in-out block p-4 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-gray-500 rounded"
+                            href="#homes"><i class="text-xs fa-solid fa-house"></i> &nbsp;HOME</a>
+                    </li>
+                    <li class="mb-1">
+                        <a style="font-family: 'Kanit', sans-serif;"
+                            class="transition duration-300 block p-4 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-gray-500 rounded"
+                            href="#about"><i class="text-xs fa-solid fa-user"></i> &nbsp;ABOUT ME</a>
+                    </li>
+                    <li class="mb-1">
+                        <a style="font-family: 'Kanit', sans-serif;"
+                            class="transition duration-300 block p-4 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-gray-500 rounded"
+                            href="#projects"><i class="text-xs fa-solid fa-folder-open"></i> &nbsp;PROJECTS</a>
+                    </li>
+                    <li class="mb-1">
+                        <a style="font-family: 'Kanit', sans-serif;"
+                            class="transition duration-300 block p-4 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-gray-500 rounded"
+                            href="#contact"><i class="text-xs fa-solid fa-phone"></i> &nbsp;CONTACT</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="mt-auto">
+                <p class="my-4 text-xs text-center text-gray-400">
+                    <span>Navbar design by <a href="https://tailwindcomponents.com/u/zeeslag">Zeeslag</a></span>
+                </p>
+            </div>
+        </nav>
+    </div>
+    <div id="homes" class="min-h-[91vh] text-white flex flex-col justify-center items-center"
+        style="background-image: linear-gradient(rgba(0, 0, 0, 0.527), rgba(0, 0, 0, 0.5)), url(assets/gif/background.gif ); background-size: cover;">
+        <p class="text-3xl sm:text-5xl tracking-wider p-4 font-bold">
+            Hello there <span class="wave">👋</span>
+        </p>
+        <div id="typer" class="text-2xl sm:text-3xl text-left font-dosis uppercase tracking-widest font-bold">
+            <h1>I AM AXEL. I'M A <span id="typed"></span><span class="cursor">&nbsp;</span>.</h1>
+        </div>
+        <div class="mt-8">
+            <button class="bg-blue-500 p-3 rounded-lg shadow-lg"><i class="fa-solid fa-arrow-up-right-from-square"></i>
+                Old portofolio</button>
+        </div>
+    </div>
+    <div id="about" class="container mx-auto px-4 py-8 w-[1080px] mt-4">
+        <div class="flex flex-col items-center">
+            <h1 style="font-family: 'Cabin', sans-serif;" class="text-5xl tracking-widest uppercase font-bold mb-2">
+                - about me -</h1>
+            <p class="text-xl">Introduce Myself</p>
+        </div>
+        <div class="mt-4">
+            <h2 class="text-2xl font-bold mb-4">Hey There!</h2>
+            <p class="text-lg leading-loose">My name is Axel, also known as "axellFumioo." I would like to introduce
+                myself as a developer with expertise in various programming languages, including Java, JavaScript, HTML,
+                PHP, CSS, Kotlin, Python, and TypeScript. Among these, I excel in HTML, PHP, and Java. I have been
+                passionate about programming since the age of 10, which means I have accumulated four years of
+                experience as a developer (since 2019). My interest in this field was initially nurtured by my father,
+                who provided me with the necessary support and encouragement. <a class="text-blue-400">Read more.</a>
+
+            </p>
+        </div>
+        <div class="flex flex-col items-center mt-8">
+            <p class="text-xl">Programming Language</p>
+            <img class="h-32 mt-4" src="assets/img/programming-lang.png">
+        </div>
+    </div>
+    <div id="projects" class="bg-gray-900">
+        <div class="mx-auto max-w-2xl px-4 py-2 sm:px-6 sm:py-12 lg:max-w-7xl lg:px-8">
+            <div class="flex flex-col items-center">
+                <h1 style="font-family: 'Cabin', sans-serif;"
+                    class="text-5xl tracking-widest uppercase text-gray-200 font-bold mb-2">
+                    - my projects -</h1>
+                <p class="text-xl text-gray-400">my little projects...</p>
+            </div>
+
+            <div class="mt-6 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
+                <div class="container mx-auto px-4 py-8">
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                        <!-- Project Card 1 -->
+                        <div class="bg-gray-800 rounded-lg shadow-lg overflow-hidden">
+                            <img src="assets/img/unavailable.png" alt="Project 1" class="w-full h-48 object-cover">
+                            <div class="p-6">
+                                <h2 class="text-xl text-gray-100 font-bold mb-2">Knightz Dashboard</h2>
+                                <p class="text-gray-400">Knightz dashboard is a website created to facilitate all
+                                    transactions automatically using the Tripay and Pterodactyl APIs.</p>
+                                <div class="mt-4">
+                                    <p><strong>Programming Language:</strong> PHP (Laravel)</p>
+                                    <p><strong>Duration:</strong> Ongoing</p>
+                                    <p><strong>Team:</strong> Solo project</p>
+                                    <!-- Add more project details as needed -->
+                                </div>
+                                <button disabled
+                                    class="cursor-not-allowed mt-4 bg-gray-500 hover:bg-gray-600 text-white px-4 py-2 rounded focus:outline-none inline-block"><i
+                                        class="fa-solid fa-arrow-up-right-from-square"></i> Learn More</button>
+                            </div>
+                        </div>
+
+                        <!-- Project Card 2 -->
+                        <div class="bg-gray-800 rounded-lg shadow-lg overflow-hidden">
+                            <img src="assets/img/project2.png" alt="Project 2" class="w-full h-48 object-cover">
+                            <div class="p-6">
+                                <h2 class="text-xl text-gray-100 font-bold mb-2">Knightz Store</h2>
+                                <p class="text-gray-400">Knightz store is a simple marketplace website for selling
+                                    digital needs.</p>
+                                <div class="mt-4">
+                                    <p><strong>Programming Language:</strong> Wordpress (Woocommerce)</p>
+                                    <p><strong>Duration:</strong> 2 weeks</p>
+                                    <p><strong>Team:</strong> Team Projects</p>
+                                    <!-- Add more project details as needed -->
+                                </div>
+                                <a href="https://knightz.store"
+                                    class="mt-4 bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded focus:outline-none inline-block"><i
+                                        class="fa-solid fa-arrow-up-right-from-square"></i> Learn
+                                    More</a>
+                            </div>
+                        </div>
+
+                        <!-- Project Card 3 -->
+                        <div class="bg-gray-800 rounded-lg shadow-lg overflow-hidden">
+                            <img src="assets/img/project3.png" alt="Project 3" class="w-full h-48 object-cover">
+                            <div class="p-6">
+                                <h2 class="text-xl text-gray-100 font-bold mb-2">Auto Update</h2>
+                                <p class="text-gray-400">Auto Update is a plugin to check whether there is an update
+                                    from the web API that has been provided.</p>
+                                <div class="mt-4">
+                                    <p><strong>Programming Language:</strong> Java (Maven)</p>
+                                    <p><strong>Duration:</strong> 3 weeks</p>
+                                    <p><strong>Team:</strong> 3 members</p>
+                                    <!-- Add more project details as needed -->
+                                </div>
+                                <a href="https://github.com/Hypster-Network/hypster-auto-updater-plugins"
+                                    class="mt-4 bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded focus:outline-none inline-block"><i
+                                        class="fa-solid fa-arrow-up-right-from-square"></i> Learn
+                                    More</a>
+                            </div>
+                        </div>
+
+                        <!-- Add more project cards as needed -->
+
+                    </div>
+
+                    <p class="text-center mt-8 text-gray-400">More Projects? Visit my <a
+                            href="https://github.com/axellFumioo" class="text-blue-500">GitHub</a> pages.</p>
+                </div>
+            </div>
+        </div>
+        <div id="contact" class="flex justify-center items-center flex-col bg-black text-blue-600"
+            style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 1)), url(assets/gif/contact.gif); background-size: cover;">
+            <div class="w-2/4">
+                <p class="text-4xl sm:text-6xl font-dosis tracking-widest p-6 text-center font-bold">Get In Touch.</p>
+                <hr class="text-blue-600">
+                <p class="font-dosis font-bold tracking-[4px] text-3xl text-center p-4">Contact Me!</p>
+                <div>
+                    <form action="">
+                        <div class="md:flex flex-row gap-10">
+                            <!-- form side -->
+                            <div class="lg:w-1/2">
+                                <div class="lg:w-[400px]">
+                                    <input type="text"
+                                        class="bg-transparent w-full p-3 border-b border-gray-500 placeholder-gray-500 text-white focus:outline-none focus:border-blue-600"
+                                        placeholder="Name">
+                                </div>
+                                <br>
+                                <div class="lg:w-[400px]">
+                                    <input type="email"
+                                        class="bg-transparent w-full p-3 border-b border-gray-500 placeholder-gray-500 text-white focus:outline-none focus:border-blue-600"
+                                        placeholder="Email">
+                                </div>
+                                <br>
+                                <div class="lg:w-[400px]">
+                                    <input type="text"
+                                        class="bg-transparent w-full p-3 border-b border-gray-500 placeholder-gray-500 text-white focus:outline-none focus:border-blue-600"
+                                        placeholder="Subject">
+                                </div>
+                                <br>
+                                <div class="lg:w-[400px]">
+                                    <textarea rows="5"
+                                        class="bg-transparent w-full p-3 border-b border-gray-500 placeholder-gray-500 text-white focus:outline-none focus:border-blue-600"
+                                        placeholder="Message"></textarea>
+                                </div>
+                            </div>
+                            <!-- form side end -->
+                            <br>
+                            <div class="text-center text-white lg:text-left flex flex-col justify-center">
+                                <a class="text-lg uppercase tracking-widest p-2"><i class="fa-solid fa-hashtag"></i>
+                                    FOLLOW ME ON</a>
+                                <div class="flex space-x-4">
+                                    <a href="#" class="text-lg uppercase tracking-widest p-2">
+                                        <i class="fab fa-instagram hover:text-gray-500"></i>
+                                    </a>
+                                    <a href="#" class="text-lg uppercase tracking-widest p-2">
+                                        <i class="fab fa-twitter hover:text-gray-500"></i>
+                                    </a>
+                                    <a href="#" class="text-lg uppercase tracking-widest p-2">
+                                        <i class="fab fa-spotify hover:text-gray-500"></i>
+                                    </a>
+                                    <a href="#" class="text-lg uppercase tracking-widest p-2">
+                                        <i class="fab fa-github hover:text-gray-500"></i>
+                                    </a>
+                                    <a href="#" class="text-lg uppercase tracking-widest p-2">
+                                        <i class="fab fa-tiktok hover:text-gray-500"></i>
+                                    </a>
+                                    <a href="#" class="text-lg uppercase tracking-widest p-2">
+                                        <i class="fab fa-twitch hover:text-gray-500"></i>
+                                    </a>
+                                    <a href="#" class="text-lg uppercase tracking-widest pt-1 hover:text-gray-500">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="36px"
+                                            height="36px">
+                                            <polygon fill="#fff"
+                                                points="25.891,13.176 12.584,19.462 14.642,28.935 17.356,28.935 16.887,22.159 17.304,22.03 18.936,28.935 21.756,28.935 21.652,20.681 22.068,20.552 23.495,28.935 26.481,28.935 27.185,18.965 27.601,18.835 28.34,28.935 32.288,28.935 33.678,15.07" />
+                                            <polygon fill="#fff"
+                                                points="23.612,32.813 22.628,30.278 32.118,30.766 31.711,34.824" />
+                                        </svg>
+                                    </a>
+                                </div>
+                                <br>
+                                <div class="email">
+                                    <p class="text-lg uppercase tracking-widest p-2">
+                                        <i class="fas fa-envelope pr-2"></i>Email
+                                    </p>
+                                    <p class="text-sm p-2">axelazharputra@proton.me</p>
+                                    <p class="text-sm p-2">personal@axellfumioo.my.id (Currently Inactive)</p>
+                                </div>
+                                <br>
+                                <div class="email">
+                                    <p class="text-lg uppercase tracking-widest p-2">
+                                        <i class="fab fa-discord pr-2"></i>Discord
+                                    </p>
+                                    <div>
+                                        <iframe id="iframe" class="w-[512px] h-64"
+                                            src="https://lanyard.cnrad.dev/api/797072418937765918"></iframe>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <br>
+                        <div class="flex flex-row justify-center items-center gap-10">
+                            <button
+                                class="sm:w-1/2 p-4 transition ease-in bg-blue-400 hover:bg-blue-500 hover:-translate-y-1 text-[#fff] text-center font-dosis font-bold tracking-[4px] rounded-lg"><i
+                                    class="fa-solid fa-paper-plane"></i> Send</button>
+                        </div>
+                        <br>
+                        <br>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="bg-[#000] text-[#fff] font-dosis flex flex-col justify-center items-center p-16">
+            <div class="w-1/2 flex justify-center items-center p-5">
+                <p class="text-5xl font-bold uppercase">AXELLFUMIOO</p>
+            </div>
+
+            <div class="w-1/2">
+                <p class="text-center text-sm  md:text-lg">Copyright © 2023
+                </p>
+            </div>
+        </div>
+    </div>
+    <script>
+        const typedSpan = document.getElementById("typed")
+        const totype = ["NEWBIE DESIGNER", "WEB DEVELOPER", "JAVA DEVELOPER"]
+
+        const delayTyping_char = 125;
+        const delayErasing_text = 75;
+        const delayTyping_text = 2000;
+
+        let totypeIndex = 0;
+        let charIndex = 0;
+
+        function typeText() {
+            if (charIndex < totype[totypeIndex].length) {
+                typedSpan.textContent += totype[totypeIndex].charAt(charIndex);
+                charIndex++;
+                setTimeout(typeText, delayTyping_char);
+            }
+            else {
+                setTimeout(eraseText, delayTyping_text);
+            }
+        }
+
+        function eraseText() {
+            if (charIndex > 0) {
+                typedSpan.textContent = totype[totypeIndex].substring(0, charIndex - 1);
+                charIndex = charIndex - 1;
+                setTimeout(eraseText, delayErasing_text);
+            }
+            else {
+                totypeIndex++;
+
+                if (totypeIndex >= totype.length)
+                    totypeIndex = 0;
+                setTimeout(typeText, delayTyping_text);
+            }
+        }
+
+        window.onload = function () {
+            if (totype[totypeIndex].length) setTimeout(typeText, delayTyping_text);
+        }
+
+        window.setInterval("reloadIFrame();", 15000);
+
+        function reloadIFrame() {
+            var frameHolder = document.getElementById('iframe');
+            frameHolder.src = "https://lanyard.cnrad.dev/api/797072418937765918"
+            console.log("Reloading iframe.")
+        }
+    </script>
+
+    <!-- I got inspiration for this website from someone called regex on Github (https://github.com/REGEX777) -->
+</body>
+
+</html>
