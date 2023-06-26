@@ -16,7 +16,77 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cabin&family=Kanit:wght@300&family=Montserrat+Alternates:wght@700&display=swap');
     </style>
-    <style src="assets/style.css"></style>
+    <style>
+        .card {
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        .wrapper {
+            height: 100vh;
+            width: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .effect-wrapper {
+            text-align: center;
+            font-weight: normal;
+        }
+
+        #typed {
+            font-weight: bold;
+            color: #00bdff;
+        }
+
+        .cursor {
+            display: inline-block;
+            background-color: #b0ff95;
+            animation: blinker 800ms infinite;
+        }
+
+        .cursor.typing-true {
+            animation: none;
+        }
+
+        @keyframes blinker {
+            0% {
+                background-color: #00aeff;
+            }
+
+            50% {
+                background-color: transparent;
+            }
+
+            100% {
+                background-color: #00aeff;
+            }
+        }
+
+        /* width */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        /* Track */
+        ::-webkit-scrollbar-track {
+            background-color: rgb(23, 31, 49);
+        }
+
+        /* Handle */
+        ::-webkit-scrollbar-thumb {
+            background-color: rgb(41, 49, 67);
+        }
+
+        /* Handle on hover */
+        ::-webkit-scrollbar-thumb:hover {
+            background-color: rgb(38, 43, 54);
+        }
+    </style>
 </head>
 
 <body class="bg-gray-200">
