@@ -7,7 +7,8 @@
     <meta content="axellFumioo - Portfolio" property="og:title" />
     <meta content="Welcome to axellFumioo portofolio." property="og:description" />
     <meta content="https://axellfumioo.my.id" property="og:url" />
-    <meta content="https://cdn.discordapp.com/attachments/879705257045803090/1122875331020337262/image.png" property="og:image" />
+    <meta content="https://cdn.discordapp.com/attachments/879705257045803090/1122875331020337262/image.png"
+        property="og:image" />
     <meta content="#00004d" data-react-helmet="true" name="theme-color" />
     <title>axellFumioo - Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
@@ -165,17 +166,20 @@
         <p class="text-3xl sm:text-5xl tracking-wider p-4 font-bold">
             Hello there <span class="wave">👋</span>
         </p>
-        <div id="typer" class="text-2xl sm:text-3xl text-left font-dosis uppercase tracking-widest font-bold">
+        <div id="typer"
+            class="text-2xl sm:text-3xl text-center sm:text-left font-dosis uppercase tracking-widest font-bold">
             <h1>I AM AXEL. I'M A <span id="typed"></span><span class="cursor">&nbsp;</span>.</h1>
         </div>
         <div class="mt-8">
             <button class="bg-blue-500 p-3 rounded-lg shadow-lg"><i class="fa-solid fa-arrow-up-right-from-square"></i>
-                Old portofolio</button>
+                Old portfolio</button>
         </div>
     </div>
-    <div id="about" class="container mx-auto px-4 py-8 w-[1080px] mt-4">
+
+    <div id="about" class="container mx-auto px-4 py-8 w-full md:w-[1080px] mt-4">
         <div class="flex flex-col items-center">
-            <h1 style="font-family: 'Cabin', sans-serif;" class="text-5xl tracking-widest uppercase font-bold mb-2">
+            <h1 style="font-family: 'Cabin', sans-serif;"
+                class="pt-12 text-4xl tracking-widest uppercase font-bold mb-2">
                 - about me -</h1>
             <p class="text-xl">Introduce Myself</p>
         </div>
@@ -187,7 +191,6 @@
                 passionate about programming since the age of 10, which means I have accumulated four years of
                 experience as a developer (since 2019). My interest in this field was initially nurtured by my father,
                 who provided me with the necessary support and encouragement. <a class="text-blue-400">Read more.</a>
-
             </p>
         </div>
         <div class="flex flex-col items-center mt-8">
@@ -195,12 +198,13 @@
             <img class="h-32 mt-4" src="assets/img/programming-lang.png">
         </div>
     </div>
+
     <div id="projects" class="bg-gray-900">
         <div class="mx-auto max-w-2xl px-4 py-2 sm:px-6 sm:py-12 lg:max-w-7xl lg:px-8">
             <div class="flex flex-col items-center">
                 <h1 style="font-family: 'Cabin', sans-serif;"
-                    class="text-5xl tracking-widest uppercase text-gray-200 font-bold mb-2">
-                    - my projects -</h1>
+                    class="pt-12 text-4xl tracking-widest uppercase text-gray-200 font-bold mb-2">
+                    - projects -</h1>
                 <p class="text-xl text-gray-400">my little projects...</p>
             </div>
 
@@ -379,6 +383,7 @@
             </div>
         </div>
 
+
         <div class="bg-[#000] text-[#fff] font-dosis flex flex-col justify-center items-center p-16">
             <div class="w-1/2 flex justify-center items-center p-5">
                 <p class="text-5xl font-bold uppercase">AXELLFUMIOO</p>
@@ -391,6 +396,29 @@
         </div>
     </div>
     <script>
+        // Mendapatkan ukuran lebar layar
+        var screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+
+        // Fungsi untuk mengecek tipe perangkat
+        function checkDeviceType() {
+            if (screenWidth < 768) {
+                // Perangkat mobile
+                document.getElementById('btnMobile').style.display = 'block';
+                document.getElementById('btnDekstop').style.display = 'none';
+            } else {
+                // Perangkat desktop
+                document.getElementById('btnMobile').style.display = 'none';
+                document.getElementById('btnDekstop').style.display = 'block';
+            }
+        }
+
+        // Memanggil fungsi saat halaman dimuat dan saat ukuran layar berubah
+        window.addEventListener('load', checkDeviceType);
+        window.addEventListener('resize', checkDeviceType);
+    </script>
+    <script>
+
+
         const typedSpan = document.getElementById("typed")
         const totype = ["NEWBIE DESIGNER", "WEB DEVELOPER", "JAVA DEVELOPER"]
 
