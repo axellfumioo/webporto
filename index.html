@@ -380,9 +380,6 @@
             </div>
         </div>
 
-
-
-
         <div class="bg-[#000] text-[#fff] font-dosis flex flex-col justify-center items-center p-16">
             <div class="w-1/2 flex justify-center items-center p-5">
                 <p class="text-5xl font-bold uppercase">AXELLFUMIOO</p>
@@ -436,25 +433,15 @@
         }
 
 
-        // Mendapatkan referensi elemen gambar
-        const imageElement = document.getElementById('realtime-image');
+        var imgElement = document.getElementById('realtime-image');
 
-        // Fungsi untuk memperbarui src gambar dari API
-        function updateImageSrc() {
-            fetch('https://lanyard.cnrad.dev/api/797072418937765918')
-                .then(response => response.json())
-                .then(data => {
-                    const imageUrl = data.data.discord_user.avatar;
-                    imageElement.src = imageUrl;
-                })
-                .catch(error => {
-                    console.error('Error:', error);
-                });
+        function refreshGambar() {
+            var timestamp = new Date().getTime();
+
+            imgElement.src = imgElement.src.split('?')[0] + '?' + timestamp;
         }
 
-        // Memanggil fungsi updateImageSrc setiap detik
-        setInterval(updateImageSrc, 1000);
-
+        setInterval(refreshGambar, 5000);
 
     </script>
 
