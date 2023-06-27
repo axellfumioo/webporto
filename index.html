@@ -121,7 +121,7 @@
                     href="#contact"><i class="text-xs fa-solid fa-phone"></i> &nbsp;CONTACT</a></li>
         </ul>
     </nav>
-    <div class="navbar-menu relative z-50 hidden">
+    <aside class="navbar-menu sticky peer-focus:left-0 ease-out delay-150 duration-300 z-50 hidden">
         <div class="navbar-backdrop fixed inset-0 bg-gray-800 opacity-25"></div>
         <nav
             class="fixed top-0 left-0 bottom-0 flex flex-col w-5/6 max-w-sm py-6 px-6 bg-gray-900 border-r overflow-y-auto">
@@ -160,8 +160,8 @@
                 </p>
             </div>
         </nav>
-    </div>
-    <div id="homes" class="min-h-[91vh] text-white flex flex-col justify-center items-center"
+    </aside>
+    <div id="homes" class="min-h-[92vh] text-white flex flex-col justify-center items-center"
         style="background-image: linear-gradient(rgba(0, 0, 0, 0.527), rgba(0, 0, 0, 0.5)), url(assets/gif/background.gif ); background-size: cover;">
         <p class="text-3xl sm:text-5xl tracking-wider p-4 font-bold">
             Hello there <span class="wave">👋</span>
@@ -281,111 +281,106 @@
             </div>
         </div>
         <div id="contact" class="flex justify-center items-center flex-col bg-black text-blue-600"
-        style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 1)), url(assets/gif/contact.gif); background-size: cover;">
-        <div class="w-11/12 lg:w-2/4">
-            <p class="text-4xl sm:text-6xl font-dosis tracking-widest p-6 text-center font-bold mt-16">Get In Touch.</p>
-            <hr class="text-blue-600">
-            <p class="font-dosis font-bold tracking-[4px] text-3xl text-center p-4">Contact Me!</p>
-            <div>
-                <form action="">
-                    <div class="md:flex flex-row gap-10">
-                        <!-- form side -->
-                        <div class="lg:w-1/2">
-                            <div class="lg:w-[400px]">
-                                <input type="text"
-                                    class="bg-transparent w-full p-3 border-b border-gray-500 placeholder-gray-500 text-white focus:outline-none focus:border-blue-600"
-                                    placeholder="Name">
+            style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 1)), url(assets/gif/contact.gif); background-size: cover;">
+            <div class="w-11/12 lg:w-2/4 max-w-3xl">
+                <p class="text-4xl sm:text-6xl font-dosis tracking-widest p-6 text-center font-bold mt-16">Get In Touch.
+                </p>
+                <hr class="text-blue-600">
+                <p class="font-dosis font-bold tracking-[4px] text-3xl text-center p-4">Contact Me!</p>
+                <div>
+                    <form action="">
+                        <div class="md:flex flex-row gap-10">
+                            <!-- form side -->
+                            <div class="lg:w-1/2">
+                                <div class="lg:w-[400px]">
+                                    <input type="text"
+                                        class="bg-transparent w-full p-3 border-b border-gray-500 placeholder-gray-500 text-white focus:outline-none focus:border-blue-600 rounded-lg"
+                                        placeholder="Name">
+                                </div>
+                                <br>
+                                <div class="lg:w-[400px]">
+                                    <input type="email"
+                                        class="bg-transparent w-full p-3 border-b border-gray-500 placeholder-gray-500 text-white focus:outline-none focus:border-blue-600 rounded-lg"
+                                        placeholder="Email">
+                                </div>
+                                <br>
+                                <div class="lg:w-[400px]">
+                                    <input type="text"
+                                        class="bg-transparent w-full p-3 border-b border-gray-500 placeholder-gray-500 text-white focus:outline-none focus:border-blue-600 rounded-lg"
+                                        placeholder="Subject">
+                                </div>
+                                <br>
+                                <div class="lg:w-[400px]">
+                                    <textarea rows="5"
+                                        class="bg-transparent w-full p-3 border-b border-gray-500 placeholder-gray-500 text-white focus:outline-none focus:border-blue-600 rounded-lg"
+                                        placeholder="Message"></textarea>
+                                </div>
                             </div>
+                            <!-- form side end -->
                             <br>
-                            <div class="lg:w-[400px]">
-                                <input type="email"
-                                    class="bg-transparent w-full p-3 border-b border-gray-500 placeholder-gray-500 text-white focus:outline-none focus:border-blue-600"
-                                    placeholder="Email">
-                            </div>
-                            <br>
-                            <div class="lg:w-[400px]">
-                                <input type="text"
-                                    class="bg-transparent w-full p-3 border-b border-gray-500 placeholder-gray-500 text-white focus:outline-none focus:border-blue-600"
-                                    placeholder="Subject">
-                            </div>
-                            <br>
-                            <div class="lg:w-[400px]">
-                                <textarea rows="5"
-                                    class="bg-transparent w-full p-3 border-b border-gray-500 placeholder-gray-500 text-white focus:outline-none focus:border-blue-600"
-                                    placeholder="Message"></textarea>
-                            </div>
-                        </div>
-                        <!-- form side end -->
-                        <br>
-                        <div class="text-center text-white lg:text-left flex flex-col justify-center">
-                            <a class="text-lg uppercase tracking-widest p-2"><i class="fa-solid fa-hashtag"></i>
-                                FOLLOW ME ON</a>
-                            <div class="flex space-x-4">
-                                <a href="#" class="text-lg uppercase tracking-widest p-2">
-                                    <i class="fab fa-instagram hover:text-gray-500"></i>
-                                </a>
-                                <a href="#" class="text-lg uppercase tracking-widest p-2">
-                                    <i class="fab fa-twitter hover:text-gray-500"></i>
-                                </a>
-                                <a href="#" class="text-lg uppercase tracking-widest p-2">
-                                    <i class="fab fa-spotify hover:text-gray-500"></i>
-                                </a>
-                                <a href="#" class="text-lg uppercase tracking-widest p-2">
-                                    <i class="fab fa-github hover:text-gray-500"></i>
-                                </a>
-                                <a href="#" class="text-lg uppercase tracking-widest p-2">
-                                    <i class="fab fa-tiktok hover:text-gray-500"></i>
-                                </a>
-                                <a href="#" class="text-lg uppercase tracking-widest p-2">
-                                    <i class="fab fa-twitch hover:text-gray-500"></i>
-                                </a>
-                                <a href="#" class="text-lg uppercase tracking-widest pt-1 hover:text-gray-500">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="36px"
-                                        height="36px">
-                                        <polygon fill="#fff"
-                                            points="25.891,13.176 12.584,19.462 14.642,28.935 17.356,28.935 16.887,22.159 17.304,22.03 18.936,28.935 21.756,28.935 21.652,20.681 22.068,20.552 23.495,28.935 26.481,28.935 27.185,18.965 27.601,18.835 28.34,28.935 32.288,28.935 33.678,15.07" />
-                                        <polygon fill="#fff"
-                                            points="23.612,32.813 22.628,30.278 32.118,30.766 31.711,34.824" />
-                                    </svg>
-                                </a>
-                            </div>
-                            <br>
-                            <div class="email">
-                                <p class="text-lg uppercase tracking-widest p-2">
-                                    <i class="fas fa-envelope pr-2"></i>Email
-                                </p>
-                                <p class="text-sm p-2">axelazharputra@proton.me</p>
-                                <p class="text-sm p-2">personal@axellfumioo.my.id (Currently Inactive)</p>
-                            </div>
-                            <br>
-                            <div class="email">
-                                <p class="text-lg uppercase tracking-widest p-2">
-                                    <i class="fab fa-discord pr-2"></i>Discord
-                                </p>
-                                <div>
-                                    <div class="flex justify-center">
-                                        <div class="w-64 h-128 sm:w-80 sm:h-160">
-                                            <img src="https://lanyard.cnrad.dev/api/797072418937765918" alt="Gambar"
-                                                class="responsive-img">
+                            <div class="text-center text-white lg:text-left flex flex-col justify-center">
+                                <a class="text-lg uppercase tracking-widest p-2"><i class="fa-solid fa-hashtag"></i>
+                                    FOLLOW ME ON</a>
+                                <div class="flex justify-center space-x-4">
+                                    <a href="#" class="text-lg uppercase tracking-widest p-2">
+                                        <i class="fab fa-instagram hover:text-gray-500"></i>
+                                    </a>
+                                    <a href="#" class="text-lg uppercase tracking-widest p-2">
+                                        <i class="fab fa-twitter hover:text-gray-500"></i>
+                                    </a>
+                                    <a href="#" class="text-lg uppercase tracking-widest p-2">
+                                        <i class="fab fa-spotify hover:text-gray-500"></i>
+                                    </a>
+                                    <a href="#" class="text-lg uppercase tracking-widest p-2">
+                                        <i class="fab fa-github hover:text-gray-500"></i>
+                                    </a>
+                                    <a href="#" class="text-lg uppercase tracking-widest p-2">
+                                        <i class="fab fa-tiktok hover:text-gray-500"></i>
+                                    </a>
+                                    <a href="#" class="text-lg uppercase tracking-widest p-2">
+                                        <i class="fab fa-twitch hover:text-gray-500"></i>
+                                    </a>
+                                </div>
+
+                                <br>
+                                <div class="email">
+                                    <p class="text-lg uppercase tracking-widest p-2">
+                                        <i class="fas fa-envelope pr-2"></i>Email
+                                    </p>
+                                    <p class="text-sm p-2">axelazharputra@proton.me</p>
+                                    <p class="text-sm p-2">personal@axellfumioo.my.id (Currently Inactive)</p>
+                                </div>
+                                <br>
+                                <div class="email">
+                                    <p class="text-lg uppercase tracking-widest p-2">
+                                        <i class="fab fa-discord pr-2"></i>Discord
+                                    </p>
+                                    <div>
+                                        <div class="flex justify-center">
+                                            <div class="w-64 h-128 sm:w-80 sm:h-160">
+                                                <img id="realtime-image"
+                                                    src="https://lanyard.cnrad.dev/api/797072418937765918"
+                                                    alt="realtime-image" class="responsive-img">
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <br>
-                    <div class="flex flex-row justify-center items-center gap-10">
-                        <button
-                            class="w-full sm:w-1/2 p-4 transition ease-in bg-blue-400 hover:bg-blue-500 hover:-translate-y-1 text-[#fff] text-center font-dosis font-bold tracking-[4px] rounded-lg"><i
-                                class="fa-solid fa-paper-plane"></i> Send</button>
-                    </div>
-                    <br>
-                    <br>
-                </form>
+                        <br>
+                        <div class="flex flex-row justify-center items-center gap-10">
+                            <button
+                                class="w-full sm:w-1/2 p-4 transition ease-in bg-blue-400 hover:bg-blue-500 hover:-translate-y-1 text-[#fff] text-center font-dosis font-bold tracking-[4px] rounded-lg"><i
+                                    class="fa-solid fa-paper-plane"></i> Send</button>
+                        </div>
+                        <br>
+                        <br>
+                    </form>
+                </div>
             </div>
         </div>
-    </div>
-    
+
+
 
 
         <div class="bg-[#000] text-[#fff] font-dosis flex flex-col justify-center items-center p-16">
@@ -400,29 +395,6 @@
         </div>
     </div>
     <script>
-        // Mendapatkan ukuran lebar layar
-        var screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-
-        // Fungsi untuk mengecek tipe perangkat
-        function checkDeviceType() {
-            if (screenWidth < 768) {
-                // Perangkat mobile
-                document.getElementById('btnMobile').style.display = 'block';
-                document.getElementById('btnDekstop').style.display = 'none';
-            } else {
-                // Perangkat desktop
-                document.getElementById('btnMobile').style.display = 'none';
-                document.getElementById('btnDekstop').style.display = 'block';
-            }
-        }
-
-        // Memanggil fungsi saat halaman dimuat dan saat ukuran layar berubah
-        window.addEventListener('load', checkDeviceType);
-        window.addEventListener('resize', checkDeviceType);
-    </script>
-    <script>
-
-
         const typedSpan = document.getElementById("typed")
         const totype = ["NEWBIE DESIGNER", "WEB DEVELOPER", "JAVA DEVELOPER"]
 
@@ -463,13 +435,27 @@
             if (totype[totypeIndex].length) setTimeout(typeText, delayTyping_text);
         }
 
-        window.setInterval("reloadIFrame();", 15000);
 
-        function reloadIFrame() {
-            var frameHolder = document.getElementById('iframe');
-            frameHolder.src = "https://lanyard.cnrad.dev/api/797072418937765918"
-            console.log("Reloading iframe.")
+        // Mendapatkan referensi elemen gambar
+        const imageElement = document.getElementById('realtime-image');
+
+        // Fungsi untuk memperbarui src gambar dari API
+        function updateImageSrc() {
+            fetch('https://lanyard.cnrad.dev/api/797072418937765918')
+                .then(response => response.json())
+                .then(data => {
+                    const imageUrl = data.data.discord_user.avatar;
+                    imageElement.src = imageUrl;
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
         }
+
+        // Memanggil fungsi updateImageSrc setiap detik
+        setInterval(updateImageSrc, 1000);
+
+
     </script>
 
     <!-- I got inspiration for this website from someone called regex on Github (https://github.com/REGEX777) -->
