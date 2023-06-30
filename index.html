@@ -15,7 +15,6 @@
     <title>axellFumioo - Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://kit.fontawesome.com/c1cbeb7f83.js" crossorigin="anonymous"></script>
-    <script src="assets/script.js"></script>
     <link rel="stylesheet" href="assets/style.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cabin&family=Kanit:wght@300&family=Montserrat+Alternates:wght@700&display=swap');
@@ -296,31 +295,22 @@
                 <div>
                     <form action="">
                         <div class="md:flex flex-row gap-10">
-                            <!-- form side -->
                             <div class="lg:w-1/2">
-                                <div class="lg:w-[400px]">
-                                    <input type="text"
-                                        class="bg-transparent w-full p-3 border-b border-gray-500 placeholder-gray-500 text-white focus:outline-none focus:border-blue-600 rounded-lg"
-                                        placeholder="Name">
-                                </div>
-                                <br>
-                                <div class="lg:w-[400px]">
-                                    <input type="email"
-                                        class="bg-transparent w-full p-3 border-b border-gray-500 placeholder-gray-500 text-white focus:outline-none focus:border-blue-600 rounded-lg"
-                                        placeholder="Email">
-                                </div>
-                                <br>
-                                <div class="lg:w-[400px]">
-                                    <input type="text"
-                                        class="bg-transparent w-full p-3 border-b border-gray-500 placeholder-gray-500 text-white focus:outline-none focus:border-blue-600 rounded-lg"
-                                        placeholder="Subject">
-                                </div>
-                                <br>
-                                <div class="lg:w-[400px]">
-                                    <textarea rows="5"
-                                        class="bg-transparent w-full p-3 border-b border-gray-500 placeholder-gray-500 text-white focus:outline-none focus:border-blue-600 rounded-lg"
-                                        placeholder="Message"></textarea>
-                                </div>
+                              <div class="lg:w-[400px]">
+                                <input type="text" id="nameInput" class="bg-transparent w-full p-3 border-b border-gray-500 placeholder-gray-500 text-white focus:outline-none focus:border-blue-600 rounded-lg" placeholder="Name">
+                              </div>
+                              <br>
+                              <div class="lg:w-[400px]">
+                                <input type="email" id="emailInput" class="bg-transparent w-full p-3 border-b border-gray-500 placeholder-gray-500 text-white focus:outline-none focus:border-blue-600 rounded-lg" placeholder="Email">
+                              </div>
+                              <br>
+                              <div class="lg:w-[400px]">
+                                <input type="text" id="subjectInput" class="bg-transparent w-full p-3 border-b border-gray-500 placeholder-gray-500 text-white focus:outline-none focus:border-blue-600 rounded-lg" placeholder="Subject">
+                              </div>
+                              <br>
+                              <div class="lg:w-[400px]">
+                                <textarea id="messageInput" rows="5" class="bg-transparent w-full p-3 border-b border-gray-500 placeholder-gray-500 text-white focus:outline-none focus:border-blue-600 rounded-lg" placeholder="Message"></textarea>
+                              </div>
                             </div>
                             <!-- form side end -->
                             <br>
@@ -456,7 +446,10 @@
 
         setInterval(refreshGambar, 1500);
 
+        
     </script>
+    <script src="assets/script.js"></script>
+      
 
     <!-- I got inspiration for this website from someone called regex on Github (https://github.com/REGEX777) -->
 </body>
