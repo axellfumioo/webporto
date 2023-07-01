@@ -23,32 +23,26 @@
 
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script>
-        document.getElementById('contactForm').addEventListener('submit', function (event) {
-            event.preventDefault(); // Prevent form submission
-
-            // Get form data
-            var name = document.getElementById('name').value;
-            var email = document.getElementById('email').value;
-            var message = document.getElementById('message').value;
-
-            // Create payload
-            var payload = {
-                message: {
-                    content: message
-                }
-            }   
-
-            // Send payload to server
-            axios.post("https://api-msg.axellfumioo.my.id/sendmessage", payload)
-                .then(function (response) {
-                    console.log(response.data);
-                    // Show success message or perform other actions
-                })
-                .catch(function (error) {
-                    console.warn(error);
-                    // Show error message or perform other actions
-                });
-        });
+axios
+  .default({
+    method: "POST",
+    url: "https://api-msg.axellfumioo.my.id/sendmessage",
+    data: {
+      message: {
+        embeds: [
+          new EmbedBuilder()
+            .setDescription("test doang anjg")
+            .setFooter({ text: "tes doang bang" })
+            .setImage(
+              "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSY1ixKNerFDoDodEDj7uE97K5O45OWjpBvK-Ot4kFriRLsPxPBXg0mthWdAQYZ7KCR4J8&usqp=CAU"
+            ),
+        ],
+      },
+    },
+    headers: {
+      Authorization: "Bearer aselole_aselole",
+    },
+  })
     </script>
 </body>
 
