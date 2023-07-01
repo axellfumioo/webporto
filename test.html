@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Contact Form</title>
+</head>
+
+<body>
+    <h1>Contact Form</h1>
+
+    <form id="contactForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required><br><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" required></textarea><br><br>
+
+        <input type="submit" value="Submit">
+    </form>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function (event) {
+            event.preventDefault(); // Prevent form submission
+
+            // Get form data
+            var name = document.getElementById('name').value;
+            var email = document.getElementById('email').value;
+            var message = document.getElementById('message').value;
+
+            // Create payload
+            var payload = {
+                message: {
+                    content: message
+                }
+            }   
+
+            // Send payload to server
+            axios.post("https://api-msg.axellfumioo.my.id/sendmessage", payload)
+                .then(function (response) {
+                    console.log(response.data);
+                    // Show success message or perform other actions
+                })
+                .catch(function (error) {
+                    console.warn(error);
+                    // Show error message or perform other actions
+                });
+        });
+    </script>
+</body>
+
+</html>
