@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cabin&family=Kanit:wght@300&family=Montserrat+Alternates:wght@700&display=swap');
+
+.card {
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.wrapper {
+    height: 100vh;
+    width: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.effect-wrapper {
+    text-align: center;
+    font-weight: normal;
+}
+
+#typed {
+    font-weight: bold;
+    color: #00bdff;
+}
+
+.cursor {
+    display: inline-block;
+    background-color: #b0ff95;
+    animation: blinker 800ms infinite;
+}
+
+.cursor.typing-true {
+    animation: none;
+}
+
+@keyframes blinker {
+    0% {
+        background-color: #00aeff;
+    }
+
+    50% {
+        background-color: transparent;
+    }
+
+    100% {
+        background-color: #00aeff;
+    }
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background-color: rgb(23, 31, 49);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background-color: rgb(41, 49, 67);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background-color: rgb(38, 43, 54);
+}
+
+.loader-container {
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.hollowLoader {
+    width: 3em;
+    height: 3em;
+    animation: loaderAnim 1.25s infinite ease-in-out;
+    outline: 1px solid transparent;
+}
+
+.hollowLoader .largeBox {
+    height: 3em;
+    width: 3em;
+    background-color: #ececec;
+    outline: 1px solid transparent;
+}
+
+.hollowLoader .smallBox {
+    height: 3em;
+    width: 3em;
+    background-color: black;
+    z-index: 1;
+    outline: 1px solid transparent;
+    animation: smallBoxAnim 1.25s alternate infinite ease-in-out;
+}
+
+@keyframes smallBoxAnim {
+    0% {
+        transform: scale(0.2);
+    }
+
+    100% {
+        transform: scale(0.75);
+    }
+}
+
+@keyframes loaderAnim {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(90deg);
+    }
+}
+
+.social-icon{
+    opacity: .7;
+    width: 28px;
+    height: 28px;
+    margin-right: 8px;
+    margin-left: 8px;
+    float: left;
+    background-size: 28px 28px !important;
+    cursor: pointer;
+    transition: .3s;
+  }
+  .social-icon:hover{opacity:1}
+  .social-icon:hover  .info{
+    opacity: 1;
+  }
+  .info{
+    opacity: 0;
+    position: absolute;
+    background: #FFF;
+    top: -40px;
+    font-size: .8em;
+    letter-spacing: 0.05em;
+    padding: 4px 6px;
+    transform: translateX(-33%);
+    height: 2em;
+    border-radius: 2px;
+  }
+  .triangle{
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    top: .2em;
+    width: 22px;
+    height: 0;
+    border-top: 10px solid white;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+  }

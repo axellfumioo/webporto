@@ -1,6 +1,14 @@
+<<<<<<< HEAD
 User-agent: *
 Disallow: 
 Disallow: /cgi-bin/
 Disallow: /assets/
 Disallow: /assets/gif
 Disallow: /assets/img
+=======
+User-agent: *
+Disallow: /cgi-bin/
+Disallow: /assets/
+Disallow: /assets/gif
+Disallow: /assets/img
+>>>>>>> 50f3f96 ([UPDATE] Memperbaiki spasi, contact form dan sebagainya)
