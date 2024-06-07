@@ -10,13 +10,12 @@
     <meta name="description"
         content="axellFumioo atau Axel adalah seorang programmer yang masih berada di jenjang SMP. Jelajahi portofolio saya untuk melihat berbagai proyek yang telah saya selesaikan, mulai dari pengembangan situs web hingga aplikasi sederhana. Saya berkomitmen untuk terus belajar dan berkembang dalam dunia pemrograman.">
     <meta content="https://axellfumioo.my.id" property="og:url">
-    <meta content="https://cdn.discordapp.com/attachments/879705257045803090/1122875331020337262/image.png"
+    <meta content="/assets/img/discord.jpg"
         property="og:image">
     <meta content="#00004d" data-react-helmet="true" name="theme-color">
     <meta name="twitter:card"
         content="axellFumioo atau Axel adalah seorang programmer yang masih berada di jenjang SMP. Jelajahi portofolio saya untuk melihat berbagai proyek yang telah saya selesaikan, mulai dari pengembangan situs web hingga aplikasi sederhana. Saya berkomitmen untuk terus belajar dan berkembang dalam dunia pemrograman.">
     <title>axellFumioo - Portfolio</title>
-    <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://kit.fontawesome.com/c1cbeb7f83.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="assets/style.css">
     <link rel="stylesheet" href="assets/custom-styling.css">
@@ -36,14 +35,7 @@
 </head>
 
 <body class="bg-gray-200">
-    <div class="loader-container">
-        <div class="hollowLoader">
-            <div class="largeBox">
-                <div class="smallBox"></div>
-            </div>
-        </div>
-    </div>
-    <div id="content" class="hidden">
+    <div id="content">
         <nav class="sticky top-0 h-16 px-4 py-4 flex justify-between items-center bg-black">
             <div class="lg:hidden"><button class="navbar-burger flex items-center text-blue-600 p-3"><svg
                         class="block h-4 w-4 fill-current" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
@@ -211,7 +203,7 @@
                 </div>
             </div>
             <div id="contact" class="flex justify-center items-center flex-col bg-black text-blue-600"
-                style="background-image:linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,1)),url(assets/gif/contact.gif);background-size:cover">
+                style="background-image:linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,1)),url(assets/img/contact-bg.webp);background-size:cover">
                 <div class="w-11/12 lg:w-2/4 max-w-3xl">
                     <p class="text-4xl sm:text-6xl font-dosis tracking-widest p-6 text-center font-bold mt-16">Get In
                         Touch.</p>
@@ -219,7 +211,7 @@
                     <p class="font-dosis font-bold tracking-[4px] text-3xl text-center p-4">Contact Me!</p>
                     <div>
                         <form id="contactForm" action="">
-                            <input type="hidden" id="token" name="token" value="">
+                            <input type="hidden" id="token" value="">
                             <div class="md:flex flex-row gap-10">
                                 <div class="lg:w-1/2">
                                     <div class="lg:w-[400px] mb-4">
@@ -311,6 +303,8 @@
             </div>
         </div>
     </div>
+    <div class="bg-yellow-400 bg-yellow-500 bg-green-400 bg-green-500"> <!-- tailwind init -->
+    </div>
     <script>
         const typedSpan = document.getElementById("typed"),
             totype = ["NEWBIE DESIGNER", "WEB DEVELOPER", "JAVA DEVELOPER"],
@@ -335,13 +329,6 @@
             var e = new Date().getTime();
             (imgElement.src = imgElement.src.split("?")[0] + "?" + e), console.log("(DEBUG) Refreshing image src");
         }
-        setInterval(refreshGambar, 5e3),
-            window.addEventListener("load", function () {
-                var e = document.querySelector(".loader-container");
-                setTimeout(function () {
-                    (e.style.display = "none"), (document.getElementById("content").style.display = "block");
-                }, 1200);
-            });
 
     </script>
     <script>

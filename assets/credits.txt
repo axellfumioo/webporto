@@ -1,6 +1,2 @@
-<<<<<<< HEAD
 https://www.icegif.com/cyberpunk-2/
-=======
-https://www.icegif.com/cyberpunk-2/
->>>>>>> 50f3f96 ([UPDATE] Memperbaiki spasi, contact form dan sebagainya)
 https://www.icegif.com/cyberpunk-22/
