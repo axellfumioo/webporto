@@ -61,3 +61,18 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 });
+
+// Create a script element
+var script = document.createElement('script');
+
+// Set the source URL of the Font Awesome kit script
+script.src = 'https://kit.fontawesome.com/c1cbeb7f83.js';
+
+// Set crossorigin attribute if necessary
+script.crossOrigin = 'anonymous';
+
+// Set async attribute to load script asynchronously
+script.async = true;
+
+// Append the script element to the document body or head
+document.head.appendChild(script);

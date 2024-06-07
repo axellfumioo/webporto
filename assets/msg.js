@@ -42,7 +42,7 @@ document.getElementById("submitBTN").addEventListener("click", async function (e
 
     console.log("Sending data:", data); // Debugging: Log the data being sent
 
-    const response = await fetch("http://127.0.0.1:8000/api/message/send", {
+    const response = await fetch("https://nexa-cmd.axellfumioo.my.id/api/message/send", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -82,7 +82,7 @@ async function fetchHash() {
   const hashFetchData = {
     token: document.getElementById('token').value,
   };
-  const response = await fetch("http://127.0.0.1:8000/api/batch/create", {
+  const response = await fetch("https:///nexa-cmd.axellfumioo.my.id/api/batch/create", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
