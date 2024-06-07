@@ -15,7 +15,7 @@ document.getElementById("submitBTN").addEventListener("click", async function (e
     handleButtonState(button, 'Failed to send', 'bg-yellow-400', 'hover:bg-yellow-500', 2000);
     return;
   } else {
-    handleButtonState(button, 'Sending Message...', 'bg-blue-400', 'hover:bg-blue-500', 3000);
+    handleButtonState(button, 'Sending Message...', 'bg-blue-400', 'hover:bg-blue-500', 20000);
   }
 
   // Validate email
@@ -23,7 +23,7 @@ document.getElementById("submitBTN").addEventListener("click", async function (e
     handleButtonState(button, 'Invalid email', 'bg-yellow-400', 'hover:bg-yellow-500', 2000);
     return;
   } else {
-    handleButtonState(button, 'Sending Message...', 'bg-blue-400', 'hover:bg-blue-500', 3000);
+    handleButtonState(button, 'Sending Message...', 'bg-blue-400', 'hover:bg-blue-500', 20000);
   }
 
   try {

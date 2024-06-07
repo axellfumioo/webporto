@@ -246,7 +246,7 @@
                             <br>
                             <div class="text-center text-white lg:text-left flex flex-col justify-center"><span
                                     class="text-lg uppercase tracking-widest p-2"><i
-                                        class="fa-solid fa-hashtag"></i> FOLLOW ME ON</span>
+                                        class="fa-solid fa-hashtag pr-2"></i>FOLLOW ME ON</span>
                                 <div class="flex justify-center space-x-4"><a
                                         href="https://www.instagram.com/axellfumioo/"
                                         alt="Axel Azhar Putra Ananca Instagram"
@@ -332,11 +332,19 @@
         window.onload = function () {
             totype[totypeIndex].length && setTimeout(typeText, delayTyping_text);
         };
-        var imgElement = document.getElementById("realtime-image");
-        function refreshGambar() {
-            var e = new Date().getTime();
-            (imgElement.src = imgElement.src.split("?")[0] + "?" + e), console.log("(DEBUG) Refreshing image src");
-        }
+        
+        (function () {
+            const imgElement = document.getElementById("realtime-image");
+
+            function refreshGambar() {
+                const timestamp = new Date().getTime();
+                imgElement.src = `${imgElement.src.split("?")[0]}?${timestamp}`;
+                console.log("(DEBUG) Refreshing image src");
+            }
+
+            setInterval(refreshGambar, 1500);
+        })();
+
 
     </script>
     <script>
