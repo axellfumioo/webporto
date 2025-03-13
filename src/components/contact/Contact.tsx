@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
+
 "use client";
 import { motion } from 'framer-motion';
 import { Twitter, Instagram, Linkedin, Github, Twitch, Mail } from "lucide-react";
