@@ -1,7 +1,5 @@
 "use client";
-import { motion } from 'framer-motion';
 import { School } from 'lucide-react';
-import Card from '@/app/components/common/Card';
 
 export default function Hero() {
     return (

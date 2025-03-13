@@ -1,9 +1,8 @@
 "use client";
 import { motion } from 'framer-motion';
-import Card from '@/components/common/Card';
 import { Twitter, Instagram, Linkedin, Github, Twitch, Mail } from "lucide-react";
 import { useState } from 'react';
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 interface ContactFormData {
@@ -54,7 +53,7 @@ export default function Hero() {
                         Contact me
                     </h2>
                     <p className='text-gray-400 text-base'>
-                        Got questions or a project in mind? I'd love to connect! Whether you need web design, brand identity, or a custom solution, feel free to reach out. Let's bring your ideas to life!
+                        Got questions or a project in mind? I&apos;d love to connect! Whether you need web design, brand identity, or a custom solution, feel free to reach out. Let&apos;s bring your ideas to life!
                     </p>
                 </motion.div>
 

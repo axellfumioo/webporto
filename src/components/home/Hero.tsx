@@ -1,7 +1,6 @@
 "use client";
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import Link from 'next/link';
 
 export default function Hero() {
   return (
@@ -19,7 +18,7 @@ export default function Hero() {
         animate={{ opacity: 1 }}
         transition={{ delay: 0.5 }}
           >
-        Hey there! I'm Axel. 
+        Hey there! I&apos;m Axel. 
           </motion.span>
           <motion.span
         initial={{ opacity: 0, rotate: -45 }}
@@ -55,12 +54,14 @@ export default function Hero() {
         transition={{ duration: 0.7, delay: 0.6 }}
         className='mt-4 text-[#b0b0b0] text-clip max-w-md font-[400]'
       >
-        I'm Axel Azhar Putra Ananca, a passionate coder and student at SMK Telkom Purwokerto.
+        I&apos;m Axel Azhar Putra Ananca, a passionate coder and student at SMK Telkom Purwokerto.
       </motion.p>
-      <img
+      <Image
         src='/IMG1_1736.JPG'
         alt='Profile'
         className='z-0 w-full max-w-lg sm:max-w-xl md:max-w-2xl lg:max-w-4xl mt-4 rounded-lg'
+        width={500}
+        height={500}
       />
     </div>
   );

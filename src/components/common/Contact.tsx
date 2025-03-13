@@ -1,6 +1,7 @@
 "use client";
 import { motion } from 'framer-motion';
 import { Phone } from 'lucide-react';
+import Image from 'next/image';
 
 export default function Hero() {
     return (
@@ -8,8 +9,11 @@ export default function Hero() {
             <div className="flex flex-wrap justify-between md:flex-nowrap mt-4 bg-[#1F1F1F] rounded-lg border border-[#2E2E2E]">
                 <div className="py-8 px-6 flex flex-col justify-center max-w-lg">
                     <h1 className="text-white text-2xl font-semibold mb-2">Contact me now</h1>
-                    <p className="text-[#A7A7A7] leading-relaxed">
+                    <p className='text-[#A7A7A7] leading-relaxed'>
                         Let's talk about how I can help you build a high-performance, visually stunning website customized to fit your business needs.
+                    </p>
+                    <p className='text-gray-400 text-base'>
+                        Got questions or a project in mind? I&apos;d love to connect! Whether you need web design, brand identity, or a custom solution, feel free to reach out. Let&apos;s bring your ideas to life!
                     </p>
                     <motion.a
                         href="contact"
@@ -23,10 +27,12 @@ export default function Hero() {
                     </motion.a>
                 </div>
                 <div className="hidden md:flex w-full max-w-xs">
-                    <img
-                        className="rounded-r-lg object-cover h-auto max-h-64 md:max-h-80"
+                    <Image
                         src="https://framerusercontent.com/images/9DgGuChlqYjMNT5bypTzBl1VY.jpg?scale-down-to=512"
                         alt="Contact Image"
+                        className="rounded-r-lg object-cover h-auto max-h-64 md:max-h-80"
+                        width={512}
+                        height={512}
                     />
                 </div>
             </div>

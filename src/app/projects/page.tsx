@@ -1,5 +1,4 @@
 import Sidebar from '@/components/common/Sidebar';
-import Hero from '@/components/home/Hero';
 import Projects from '@/components/projects/Project';
 import Contact from '@/components/common/Contact';
 import Footer  from '@/components/common/Footer';

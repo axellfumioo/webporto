@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from 'react';
-import { Home, GraduationCap, Briefcase, StickyNote, Phone, Instagram, Twitter, Menu, X, SquareArrowOutUpRight } from 'lucide-react';
+import { Home, Briefcase, Phone, Instagram, Twitter, Menu, X } from 'lucide-react';
+import Image from 'next/image';
 
 const Sidebar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -41,7 +42,7 @@ const Sidebar = () => {
         {/* Profile Section */}
         <div className="flex items-center p-3 md:mt-0">
           <div className="w-8 h-8 rounded-full bg-gray-700 overflow-hidden mr-3">
-            <img src="/vector.png" alt="Profile" className="object-cover h-[48px] w-full" />
+            <Image src="/vector.png" alt="Profile" className="object-cover h-[48px] w-full" width={48} height={48} />
           </div>
           <div>
             <h3 className="text-white text-base font-medium">Axel Azhar Putra</h3>

@@ -22,7 +22,7 @@ export async function POST(request: Request) {
       { message: "Message sent successfully", contact },
       { status: 201 }
     );
-  } catch (error) {
+  } catch {
     return NextResponse.json(
       { error: "Failed to save contact" },
       { status: 500 }

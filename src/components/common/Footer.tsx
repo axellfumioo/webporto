@@ -1,6 +1,5 @@
 "use client";
-import React, { useState } from 'react';
-import { Home, GraduationCap, Briefcase, StickyNote, Phone, Instagram, Twitter, Menu, X, SquareArrowOutUpRight } from 'lucide-react';
+import React from 'react';
 
 const Footer = () => {
   return (
