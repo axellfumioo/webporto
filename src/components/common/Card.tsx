@@ -21,6 +21,8 @@ const Card: React.FC<CardProps> = ({ image, title, category }) => {
                     width={500}
                     height={300}
                     className="object-cover w-full h-60"
+                    loading="lazy"
+                    unoptimized
                 />
             </motion.div>
             <div className="absolute bottom-0 left-0 right-0 bg-[#1F1F1F] bg-opacity-50 p-4">

@@ -23,6 +23,7 @@ const Sidebar = () => {
       <button
         className="md:hidden fixed top-4 left-4 z-50 p-2 rounded-md bg-[#1E1E1E] text-white"
         onClick={toggleSidebar}
+        aria-label="Navbar"
       >
         {isOpen ? <X size={24} /> : <Menu size={24} />}
       </button>
@@ -42,7 +43,9 @@ const Sidebar = () => {
         {/* Profile Section */}
         <div className="flex items-center p-3 md:mt-0">
           <div className="w-8 h-8 rounded-full bg-gray-700 overflow-hidden mr-3">
-            <Image src="/vector.png" alt="Profile" className="object-cover h-[48px] w-full" width={48} height={48} />
+            <Image src="/vector.png" alt="Profile" className="object-cover h-[48px] w-full" width={48} height={48}
+                    loading="lazy"
+                    unoptimized />
           </div>
           <div>
             <h3 className="text-white text-base font-medium">Axel Azhar Putra</h3>

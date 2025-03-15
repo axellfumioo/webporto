@@ -6,6 +6,7 @@ import { Twitter, Instagram, Linkedin, Github, Twitch, Mail } from "lucide-react
 import { useState } from 'react';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Image from 'next/image';
 
 interface ContactFormData {
     name: string;
@@ -90,7 +91,6 @@ export default function Hero() {
                         className=" bg-[#2F2F2F] text-white px-4 py-2 rounded-md hover:bg-[#323232] transition cursor-pointer"
                     >Submit</button>
                 </form>
-
                 {/* Social Media Section */}
                 <div className='flex flex-col items-center space-y-2'>
                     <h3 className='text-white text-xl mb-2 font-semibold'>Let's Connect</h3>

@@ -12,9 +12,6 @@ export default function Hero() {
                     <p className='text-[#A7A7A7] leading-relaxed'>
                         Let's talk about how I can help you build a high-performance, visually stunning website customized to fit your business needs.
                     </p>
-                    <p className='text-gray-400 text-base'>
-                        Got questions or a project in mind? I&apos;d love to connect! Whether you need web design, brand identity, or a custom solution, feel free to reach out. Let&apos;s bring your ideas to life!
-                    </p>
                     <motion.a
                         href="contact"
                         className="text-sm bg-[#333333] hover:bg-[#2B2B2B] text-white py-2 px-4 rounded-lg mt-4 flex items-center w-fit"
@@ -28,11 +25,13 @@ export default function Hero() {
                 </div>
                 <div className="hidden md:flex w-full max-w-xs">
                     <Image
-                        src="https://framerusercontent.com/images/9DgGuChlqYjMNT5bypTzBl1VY.jpg?scale-down-to=512"
+                        src="/contact.jpg"
                         alt="Contact Image"
                         className="rounded-r-lg object-cover h-auto max-h-64 md:max-h-80"
                         width={512}
                         height={512}
+                        loading="lazy"
+                        unoptimized
                     />
                 </div>
             </div>

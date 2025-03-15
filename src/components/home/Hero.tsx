@@ -1,6 +1,8 @@
 "use client";
 import { motion } from 'framer-motion';
+import { FileUser, Phone } from 'lucide-react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export default function Hero() {
   return (
@@ -14,18 +16,18 @@ export default function Hero() {
       >
         <h1 className='text-white text-4xl font-bold tracking-tight'>
           <motion.span
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.5 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.5 }}
           >
-        Hey there! I&apos;m Axel. 
+            Hey there! I&apos;m Axel&nbsp;
           </motion.span>
           <motion.span
-        initial={{ opacity: 0, rotate: -45 }}
-        animate={{ opacity: 1, rotate: 0 }}
-        transition={{ delay: 1, duration: 0.5 }}
+            initial={{ opacity: 0, rotate: -45 }}
+            animate={{ opacity: 1, rotate: 0 }}
+            transition={{ delay: 1, duration: 0.5 }}
           >
-        👋
+            👋
           </motion.span>
         </h1>
       </motion.div>
@@ -37,13 +39,13 @@ export default function Hero() {
         className='space-y-1'
       >
         <h2 className='text-white text-2xl md:text-4xl font-semibold'>
-          Building cool stuff with Laravel & Next.js. 
+          Building cool stuff with Laravel & Next.js.
           <motion.span
-        initial={{ opacity: 0, scale: 0 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ delay: 1.2, type: "spring" }}
+            initial={{ opacity: 0, scale: 0 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 1.2, type: "spring" }}
           >
-        🚀
+            🚀
           </motion.span>
         </h2>
       </motion.div>
@@ -56,12 +58,30 @@ export default function Hero() {
       >
         I&apos;m Axel Azhar Putra Ananca, a passionate coder and student at SMK Telkom Purwokerto.
       </motion.p>
+      <div className='flex gap-3 my-5'>
+        <Link 
+          href="/cv" 
+          className='flex items-center bg-[#333333] gap-2 text-sm text-white px-3 py-2 rounded-lg hover:bg-[#2B2B2B] transition-all font-xs'
+        >
+          <FileUser size={16} /> 
+          View my CV
+        </Link>
+        <Link 
+          href="/contact" 
+          className='flex items-center border-[#2B2B2B] gap-2 text-sm border px-3 py-2 rounded-lg hover:bg-[#2B2B2B] transition-all font-xs text-white'
+        >
+          <Phone size={16} />
+          Contact
+        </Link>
+      </div>
       <Image
         src='/IMG1_1736.JPG'
         alt='Profile'
         className='z-0 w-full max-w-lg sm:max-w-xl md:max-w-2xl lg:max-w-4xl mt-4 rounded-lg'
         width={500}
         height={500}
+        loading="lazy"
+        unoptimized
       />
     </div>
   );

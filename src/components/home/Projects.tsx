@@ -21,13 +21,14 @@ export default function Hero() {
             <div className='flex justify-between items-center'>
                 <h2 className='text-white text-2xl font-medium'>Selected Projects</h2>
                 <div className='flex items-center'>
-                    <motion.button
-                        className='flex items-center cursor-pointer'
+                    <motion.a
+                        href='/projects'
+                        className='flex items-center cursor-pointer p-3 min-h-[44px] min-w-[44px]'
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}>
-                        <a href='/projects' className='text-[#b0b0b0] text-sm mr-2'>Show all</a>
+                        <span className='text-[#b0b0b0] text-sm mr-2'>Show all</span>
                         <ArrowRight className='text-[#b0b0b0] text-sm' />
-                    </motion.button>
+                    </motion.a>
                 </div>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-2 justify-center mt-4">
