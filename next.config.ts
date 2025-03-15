@@ -7,13 +7,16 @@ module.exports = {
   images: {
     remotePatterns: [
       {
-        protocol: 'https',
-        hostname: 'lanyard.cnrad.dev',
-        port: '',
-        pathname: '/api/797072418937765918',
-        search: '',
+        protocol: "https",
+        hostname: "lanyard.cnrad.dev",
+        port: "",
+        pathname: "/api/797072418937765918",
+        search: "",
       },
     ],
+    rules: {
+      "react/no-unescaped-entities": "off",
+    },
   },
-}
+};
 export default nextConfig;
