@@ -5,32 +5,32 @@ import Card from '@/components/common/Card';
 export default function Hero() {
     const cards = [
         {
-            image: '/project/sabar.jpg', // Ganti dengan path gambar yang sesuai
+            image: '/img/project/sabar.jpg', // Ganti dengan path gambar yang sesuai
             title: 'Sabar School LMS - Website',
             category: 'Side Project'
         },
         {
-            image: '/project/solvana.jpg', // Ganti dengan path gambar yang sesuai
+            image: '/img/project/solvana.jpg', // Ganti dengan path gambar yang sesuai
             title: 'Solvana - Website',
             category: 'Hackathon Project'
         },
         {
-            image: '/project/marivora.jpg', // Ganti dengan path gambar yang sesuai
+            image: '/img/project/marivora.jpg', // Ganti dengan path gambar yang sesuai
             title: 'Marivora - Website',
             category: 'Competition Project'
         },
         {
-            image: '/project/greencycle.jpg', // Ganti dengan path gambar yang sesuai
+            image: '/img/project/greencycle.jpg', // Ganti dengan path gambar yang sesuai
             title: 'GreenCycle - Mobile First Website',
             category: 'Competition Project'
         },
         {
-            image: '/project/minecraft.jpg', // Ganti dengan path gambar yang sesuai
+            image: '/img/project/minecraft.jpg', // Ganti dengan path gambar yang sesuai
             title: 'Minecraft Server -  Website',
             category: 'Side Project'
         },
         {
-            image: '/project/teater.jpg', // Ganti dengan path gambar yang sesuai
+            image: '/img/project/teater.jpg', // Ganti dengan path gambar yang sesuai
             title: 'Pemesanan Teater -  Website',
             category: 'Side Project'
         },

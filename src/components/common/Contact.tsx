@@ -25,7 +25,7 @@ export default function Hero() {
                 </div>
                 <div className="hidden md:flex w-full max-w-xs">
                     <Image
-                        src="/contact.jpg"
+                        src="/img/contact.jpg"
                         alt="Contact Image"
                         className="rounded-r-lg object-cover h-auto max-h-64 md:max-h-80"
                         width={512}

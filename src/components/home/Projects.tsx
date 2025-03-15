@@ -6,12 +6,12 @@ import Card from '@/components/common/Card';
 export default function Hero() {
     const cards = [
         {
-            image: '/project/solvana.jpg', // Ganti dengan path gambar yang sesuai
+            image: '/img/project/solvana.jpg', // Ganti dengan path gambar yang sesuai
             title: 'Solvana - Website',
             category: 'Hackathon Project'
         },
         {
-            image: '/project/sabar.jpg', // Ganti dengan path gambar yang sesuai
+            image: '/img/project/sabar.jpg', // Ganti dengan path gambar yang sesuai
             title: 'Sabar School LMS - Website',
             category: 'Side Project'
         },

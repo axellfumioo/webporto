@@ -43,7 +43,7 @@ const Sidebar = () => {
         {/* Profile Section */}
         <div className="flex items-center p-3 md:mt-0">
           <div className="w-8 h-8 rounded-full bg-gray-700 overflow-hidden mr-3">
-            <Image src="/vector.png" alt="Profile" className="object-cover h-[48px] w-full" width={48} height={48}
+            <Image src="/img/vector.png" alt="Profile" className="object-cover h-[48px] w-full" width={48} height={48}
                     loading="lazy"
                     unoptimized />
           </div>

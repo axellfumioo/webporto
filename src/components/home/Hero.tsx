@@ -75,7 +75,7 @@ export default function Hero() {
         </Link>
       </div>
       <Image
-        src='/IMG1_1736.jpg'
+        src='/img/IMG1_1736.jpg'
         alt='Profile'
         className='z-0 w-full max-w-lg sm:max-w-xl md:max-w-2xl lg:max-w-4xl mt-4 rounded-lg'
         width={500}
