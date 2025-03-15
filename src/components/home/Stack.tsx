@@ -27,7 +27,7 @@ export default function Hero() {
                     </div>
                 </div>
                 <div className="bg-[#1F1F1F] p-4 rounded-lg flex items-center space-x-4">
-                    <Image src="/laravel.png" className="w-10 h-10" alt="Laravel" width={40} height={40}
+                    <Image src="/img/laravel.png" className="w-10 h-10" alt="Laravel" width={40} height={40}
                     loading="lazy"
                     unoptimized />
                     <div>
