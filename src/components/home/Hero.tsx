@@ -7,6 +7,7 @@ import Link from 'next/link';
 export default function Hero() {
   return (
     <div className='z-40 mt-20 md:mt-0'>
+      {/* Previous code remains the same until the Image component */}
 
       <motion.div
         initial={{ opacity: 0, x: -50 }}
@@ -59,15 +60,15 @@ export default function Hero() {
         I&apos;m Axel Azhar Putra Ananca, a passionate coder and student at SMK Telkom Purwokerto.
       </motion.p>
       <div className='flex gap-3 my-5'>
-        <Link 
-          href="/cv" 
+        <Link
+          href="/cv"
           className='flex items-center bg-[#333333] gap-2 text-sm text-white px-3 py-2 rounded-lg hover:bg-[#2B2B2B] transition-all font-xs'
         >
-          <FileUser size={16} /> 
+          <FileUser size={16} />
           View my CV
         </Link>
-        <Link 
-          href="/contact" 
+        <Link
+          href="/contact"
           className='flex items-center border-[#2B2B2B] gap-2 text-sm border px-3 py-2 rounded-lg hover:bg-[#2B2B2B] transition-all font-xs text-white'
         >
           <Phone size={16} />
@@ -80,8 +81,9 @@ export default function Hero() {
         className='z-0 w-full max-w-lg sm:max-w-xl md:max-w-2xl lg:max-w-4xl mt-4 rounded-lg'
         width={500}
         height={500}
+        placeholder="blur"
+        blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb/2wBDABQODxIPDRQSEBIXFRQdHx4dHRsdHR4dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR3/2wBDAR0XFyAeIRshIRshHRsdHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR3/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAb/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k="
         loading="lazy"
-        unoptimized
       />
     </div>
   );
