@@ -45,7 +45,7 @@ export default function Hero() {
                     className='space-y-1'
                 >
                     <h2 className='text-white text-4xl font-bold tracking-tight'>
-                        Featured Projects
+                        My Projects
                     </h2>
                     <p className='text-gray-400 text-lg'>
                         Explore my recent work and creative solutions
