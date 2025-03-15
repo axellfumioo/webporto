@@ -11,7 +11,7 @@ export default function Hero() {
             category: 'Hackathon Project'
         },
         {
-            image: '/project/sabar.JPG', // Ganti dengan path gambar yang sesuai
+            image: '/project/sabar.jpg', // Ganti dengan path gambar yang sesuai
             title: 'Sabar School LMS - Website',
             category: 'Side Project'
         },
