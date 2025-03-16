@@ -5,8 +5,12 @@ const nextConfig: NextConfig = {
 };
 
 module.exports = {
+  ...nextConfig,
   eslint: {
     ignoreDuringBuilds: true,
+  },
+  experimental: {
+    granularChunks: true,
   },
 };
 
