@@ -5,12 +5,15 @@ const nextConfig: NextConfig = {
 };
 
 module.exports = {
-  ...nextConfig,
+  webpack: (config: any) => {
+    config.optimization.splitChunks = {
+      chunks: "all",
+      maxSize: 20000000, // Batas ukuran 24MB biar aman
+    };
+    return config;
+  },
   eslint: {
     ignoreDuringBuilds: true,
-  },
-  experimental: {
-    granularChunks: true,
   },
 };
 
