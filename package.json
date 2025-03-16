@@ -10,7 +10,7 @@
     "build": "next build && next-on-pages",
     "start": "next start",
     "lint": "next lint",
-    "deploy": "wrangler pages deploy .next/"
+    "deploy": "wrangler pages deploy .next/output"
   },
   "dependencies": {
     "@prisma/client": "^6.5.0",
@@ -29,8 +29,8 @@
   "devDependencies": {
     "@cloudflare/next-on-pages": "^1.13.10",
     "@eslint/eslintrc": "^3",
-    "@types/node": "^18.0.0",
-    "@types/react": "^18.0.0",
+    "@types/node": "^20",
+    "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "15.2.0",
