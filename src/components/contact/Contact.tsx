@@ -36,7 +36,7 @@ export default function Hero() {
 
             if (res.status === 429) {
                 setRateLimit(true);
-                toast.error('Too many requests, please try again later.');
+                toast.error('O-Ow... Too many requests, wait a bit!');
                 return;
             }
 

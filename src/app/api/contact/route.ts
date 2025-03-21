@@ -11,7 +11,7 @@ const redis = new Redis({
 
 const ratelimit = new Ratelimit({
   redis,
-  limiter: Ratelimit.fixedWindow(5, "15 m"), // 5 request per 10 detik
+  limiter: Ratelimit.fixedWindow(3, "5 m"), // 5 request per 10 detik
   analytics: true,
 });
 
