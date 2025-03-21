@@ -1,38 +1,27 @@
 import { NextResponse } from "next/server";
 import { PrismaClient } from "@prisma/client";
+import { Redis } from "@upstash/redis";
+import { Ratelimit } from "@upstash/ratelimit";
 
 const prisma = new PrismaClient();
-const rateLimit = new Map(); // Cache untuk menyimpan jumlah request per IP
+const redis = new Redis({
+  url: process.env.UPSTASH_REDIS_REST_URL!,
+  token: process.env.UPSTASH_REDIS_REST_TOKEN!,
+});
 
-function checkRateLimit(ip: string) {
-  const now = Date.now();
-  
-  if (rateLimit.has(ip)) {
-    const { count, lastRequest } = rateLimit.get(ip);
-    
-    if (now - lastRequest < 10000) { // 10 detik
-      if (count >= 5) {
-        return false; // Rate limit exceeded
-      }
-      rateLimit.set(ip, { count: count + 1, lastRequest: now });
-    } else {
-      rateLimit.set(ip, { count: 1, lastRequest: now });
-    }
-  } else {
-    rateLimit.set(ip, { count: 1, lastRequest: now });
-  }
-
-  return true; // Allowed
-}
+const ratelimit = new Ratelimit({
+  redis,
+  limiter: Ratelimit.fixedWindow(5, "15 m"), // 5 request per 10 detik
+  analytics: true,
+});
 
 export async function POST(request: Request) {
-  const ip = request.headers.get("x-forwarded-for") || "unknown";
+  // Gunakan IP dari Next.js untuk anti-spoofing
+  const ip = request.headers.get("x-vercel-ip-country") || request.headers.get("x-real-ip") || request.headers.get("x-forwarded-for") || "unknown";
 
-  if (!checkRateLimit(ip)) {
-    return NextResponse.json(
-      { error: "Too many requests, please try again later." },
-      { status: 429 }
-    );
+  const { success } = await ratelimit.limit(ip);
+  if (!success) {
+    return NextResponse.json({ error: "Too many requests, wait a bit!" }, { status: 429 });
   }
 
   try {
