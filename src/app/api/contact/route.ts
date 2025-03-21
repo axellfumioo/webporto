@@ -27,6 +27,7 @@ export async function POST(request: Request) {
   try {
     const { name, email, message } = await request.json();
 
+    // Validate required fields
     if (!name || !email || !message) {
       return NextResponse.json(
         { error: "All fields are required" },
@@ -34,12 +35,34 @@ export async function POST(request: Request) {
       );
     }
 
-    const [contact] = await prisma.$transaction([
-      prisma.contact.create({
+    // Validate name
+    if (typeof name !== 'string' || name.length < 2 || name.length > 50) {
+      return NextResponse.json(
+        { error: "Name must be between 2 and 50 characters" },
+        { status: 400 }
+      );
+    }
+
+    // Validate email
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      return NextResponse.json(
+        { error: "Please provide a valid email address" },
+        { status: 400 }
+      );
+    }
+
+    // Validate message
+    if (typeof message !== 'string' || message.length < 10 || message.length > 1000) {
+      return NextResponse.json(
+        { error: "Message must be between 10 and 1000 characters" },
+        { status: 400 }
+      );1
+    }
+
+    const contact = await prisma.contact.create({
       data: { name, email, message },
-      select: { id: true, name: true, email: true, message: true }
-      })
-    ]);
+    });
 
     return NextResponse.json(
       { message: "Message sent successfully", contact },
