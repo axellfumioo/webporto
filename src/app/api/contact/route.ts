@@ -2,66 +2,39 @@ import { NextResponse } from "next/server";
 import { PrismaClient } from "@prisma/client";
 
 const prisma = new PrismaClient();
+const rateLimit = new Map(); // Cache untuk menyimpan jumlah request per IP
 
-const rateLimitMap = new Map<string, { count: number; lastRequest: number }>();
-const RATE_LIMIT_WINDOW = 30 * 60 * 1000; // 30 minutes (1,800,000 ms)
-const RATE_LIMIT_MAX = 15; // Maximum 15 requests per 30 minutes
-
-async function getIP(request: Request): Promise<string | null> {
-  try {
-    const response = await fetch("https://api.ipify.org?format=json");
-    const data = await response.json();
-    return data.ip;
-  } catch (error) {
-    console.error("Failed to fetch IP:", error);
-    return null;
-  }
-}
-
-async function rateLimit(request: Request): Promise<boolean> {
-  const ip = await getIP(request);
-
-  if (!ip) {
-    console.error("Failed to retrieve IP address.");
-    return false;
-  }
-
-  const currentTime = Date.now();
-
-  if (!rateLimitMap.has(ip)) {
-    rateLimitMap.set(ip, { count: 1, lastRequest: currentTime });
-  } else {
-    const userData = rateLimitMap.get(ip)!;
-    const elapsedTime = currentTime - userData.lastRequest;
-
-    if (elapsedTime > RATE_LIMIT_WINDOW) {
-      rateLimitMap.set(ip, { count: 1, lastRequest: currentTime });
-    } else {
-      if (userData.count >= RATE_LIMIT_MAX) {
-        return false;
+function checkRateLimit(ip: string) {
+  const now = Date.now();
+  
+  if (rateLimit.has(ip)) {
+    const { count, lastRequest } = rateLimit.get(ip);
+    
+    if (now - lastRequest < 10000) { // 10 detik
+      if (count >= 5) {
+        return false; // Rate limit exceeded
       }
-      rateLimitMap.set(ip, {
-        count: userData.count + 1,
-        lastRequest: currentTime,
-      });
+      rateLimit.set(ip, { count: count + 1, lastRequest: now });
+    } else {
+      rateLimit.set(ip, { count: 1, lastRequest: now });
     }
+  } else {
+    rateLimit.set(ip, { count: 1, lastRequest: now });
   }
 
-  // Cleanup old entries untuk menghindari memory leak
-  setTimeout(() => {
-    rateLimitMap.delete(ip);
-  }, RATE_LIMIT_WINDOW);
-
-  return true;
+  return true; // Allowed
 }
 
 export async function POST(request: Request) {
-  if (!(await rateLimit(request))) {
+  const ip = request.headers.get("x-forwarded-for") || "unknown";
+
+  if (!checkRateLimit(ip)) {
     return NextResponse.json(
       { error: "Too many requests, please try again later." },
       { status: 429 }
     );
   }
+
   try {
     const { name, email, message } = await request.json();
 
@@ -88,9 +61,17 @@ export async function POST(request: Request) {
   }
 }
 
-export async function GET() {
+export async function GET(request: Request) {
   return NextResponse.json(
-    { message: "Invalid request method." },
-    { status: 405 }
+    { 
+      error: "Method not allowed",
+      message: "This endpoint only accepts POST requests" 
+    },
+    { 
+      status: 405,
+      headers: {
+        'Allow': 'POST'
+      }
+    }
   );
 }
