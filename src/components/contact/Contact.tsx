@@ -3,18 +3,20 @@
 "use client";
 import { motion } from 'framer-motion';
 import { Twitter, Instagram, Linkedin, Github, Twitch, Mail } from "lucide-react";
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import Image from 'next/image';
 
 interface ContactFormData {
     name: string;
     email: string;
     message: string;
 }
+
 export default function Hero() {
     const [formData, setFormData] = useState<ContactFormData>({ name: '', email: '', message: '' });
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [rateLimit, setRateLimit] = useState(false);
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -22,6 +24,8 @@ export default function Hero() {
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
+        setRateLimit(false);
+        setIsSubmitting(true);
 
         try {
             const res = await fetch('/api/contact', {
@@ -30,16 +34,26 @@ export default function Hero() {
                 body: JSON.stringify(formData),
             });
 
+            if (res.status === 429) {
+                setRateLimit(true);
+                toast.error('Too many requests, please try again later.');
+                return;
+            }
+
             const data = await res.json();
 
             if (res.ok) {
+                setRateLimit(false);
                 toast.success('Message sent successfully! 🚀');
-                setFormData({ name: '', email: '', message: '' }); // Reset form
+                setFormData({ name: '', email: '', message: '' });
             } else {
                 toast.error(data.error || 'Something went wrong. Try again!');
             }
+
         } catch (error) {
             toast.error('Server error. Please try again later.');
+        } finally {
+            setIsSubmitting(false);
         }
     };
 
@@ -69,6 +83,7 @@ export default function Hero() {
                             name="name"
                             value={formData.name}
                             onChange={handleChange}
+                            disabled={isSubmitting}
                         />
                         <input
                             type="email"
@@ -77,6 +92,7 @@ export default function Hero() {
                             name="email"
                             value={formData.email}
                             onChange={handleChange}
+                            disabled={isSubmitting}
                         />
                     </div>
                     <textarea
@@ -85,11 +101,17 @@ export default function Hero() {
                         name='message'
                         value={formData.message}
                         onChange={handleChange}
+                        disabled={isSubmitting}
                     ></textarea>
                     <button
                         type="submit"
-                        className=" bg-[#2F2F2F] text-white px-4 py-2 rounded-md hover:bg-[#323232] transition cursor-pointer"
-                    >Submit</button>
+                        disabled={isSubmitting}
+                        className={`bg-[#2F2F2F] text-white px-4 py-2 rounded-md transition cursor-pointer ${isSubmitting ? 'opacity-50 cursor-not-allowed' : 'hover:bg-[#323232]'
+                            }`}
+                    >
+                        {isSubmitting ? 'Sending...' : 'Submit'}
+                    </button>
+
                 </form>
                 {/* Social Media Section */}
                 <div className='flex flex-col items-center space-y-2'>
