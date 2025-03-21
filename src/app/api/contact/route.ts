@@ -19,7 +19,7 @@ async function getIP(request: Request): Promise<string | null> {
   }
 }
 
-export async function rateLimit(request: Request): Promise<boolean> {
+async function rateLimit(request: Request): Promise<boolean> {
   const ip = await getIP(request);
 
   if (!ip) {
@@ -90,7 +90,7 @@ export async function POST(request: Request) {
   }
 }
 
-export async function GET(request: Request) {
+export async function GET() {
   return NextResponse.json(
     { message: "Invalid request method." },
     { status: 405 }
