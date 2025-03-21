@@ -34,9 +34,12 @@ export async function POST(request: Request) {
       );
     }
 
-    const contact = await prisma.contact.create({
+    const [contact] = await prisma.$transaction([
+      prisma.contact.create({
       data: { name, email, message },
-    });
+      select: { id: true, name: true, email: true, message: true }
+      })
+    ]);
 
     return NextResponse.json(
       { message: "Message sent successfully", contact },
