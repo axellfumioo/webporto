@@ -16,6 +16,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Axel Azhar Putra Ananca - Portofolio",
   description: "A passionate coder and student at SMK Telkom Purwokerto. Welcome to my portfolio website! 🚀",
+  icons: {
+    icon: '/favicon.ico',
+  },
   keywords: [
     "Axel Azhar Putra Ananca Portfolio", "AxellFumioo Portfolio", "Axel Azhar Putra Ananca Website",
     "AxellFumioo Website", "Axel Azhar Putra Ananca Personal Website", "AxellFumioo Personal Portfolio",
