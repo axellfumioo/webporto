@@ -14,8 +14,7 @@ async function getIP(request: Request): Promise<string | null> {
     return data.ip;
   } catch (error) {
     console.error("Failed to fetch IP:", error);
-    const ip = request.headers.get("x-forwarded-for") || "unknown";
-    return ip;
+    return null;
   }
 }
 
@@ -24,7 +23,6 @@ async function rateLimit(request: Request): Promise<boolean> {
 
   if (!ip) {
     console.error("Failed to retrieve IP address.");
-    
     return false;
   }
 
