@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from 'react';
-import { Home, Briefcase, Phone, Menu, X } from 'lucide-react';
+import { Home, Briefcase, Phone, Menu, User, X } from 'lucide-react';
 import Image from 'next/image';
 
 const Sidebar = () => {
@@ -12,8 +12,8 @@ const Sidebar = () => {
 
   const SidebarItems = [
     { name: 'Home', href: '/', icon: Home },
+    { name: 'About', href: 'about', icon: User },
     { name: 'Projects', href: 'projects', icon: Briefcase },
-    // { name: 'Certification', href: 'certification', icon: StickyNote },
     { name: 'Contact', href: 'contact', icon: Phone },
   ]
 

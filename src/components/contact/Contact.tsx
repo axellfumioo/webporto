@@ -78,7 +78,7 @@ export default function Hero() {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
                         <input
                             type="text"
-                            placeholder="Your Name"
+                            placeholder="Your Full Name (Must be full name)"
                             className="w-full p-3 bg-[#2E2E2E] text-white rounded-md focus:outline-none focus:ring-2 focus:ring-gray-500"
                             name="name"
                             value={formData.name}

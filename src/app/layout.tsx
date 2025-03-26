@@ -14,40 +14,61 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Axel Azhar Putra Ananca - Portofolio",
+  title: "Axel Azhar Putra Ananca - Software Developer",
   description: "A passionate coder and student at SMK Telkom Purwokerto. Welcome to my portfolio website! 🚀",
   icons: {
     icon: '/favicon.ico',
   },
+  openGraph: {
+    title: "Axel Azhar Putra Ananca - Software Developer",
+    description: "A passionate coder and student at SMK Telkom Purwokerto. Welcome to my portfolio website! 🚀",
+    images: [
+      {
+        url: "/img/web.jpeg",
+        width: 1920,
+        height: 1080,
+        alt: "Axel Azhar Putra Ananca Portfolio Thumbnail"
+      },
+    ],
+    type: "website",
+    url: "https://axellfumioo.my.id",
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@axellFumioo",
+    title: "Axel Azhar Putra Ananca - Software Developer",
+    description: "Follow Axel's journey in web development, AI, and open-source contributions.",
+    images: ["/img/web.jpeg"],
+  },
+  authors: [{ name: "Axel Azhar Putra Ananca" }],
   keywords: [
-    "Axel Azhar Putra Ananca Portfolio", "AxellFumioo Portfolio", "Axel Azhar Putra Ananca Website",
-    "AxellFumioo Website", "Axel Azhar Putra Ananca Personal Website", "AxellFumioo Personal Portfolio",
-    "Axel Azhar Putra Ananca LinkedIn", "AxellFumioo LinkedIn", "Axel Azhar Putra Ananca GitHub",
-    "AxellFumioo GitHub", "Axel Azhar Putra Ananca Twitter", "AxellFumioo Twitter", "Axel Azhar Putra Ananca Instagram",
-    "AxellFumioo Instagram", "Axel Azhar Putra Ananca Facebook", "AxellFumioo Facebook", "Axel Azhar Putra Ananca YouTube",
-    "AxellFumioo YouTube", "Axel Azhar Putra Ananca Social Media", "AxellFumioo Social Media",
-    "Axel Azhar Putra Ananca Web Developer", "AxellFumioo Web Developer", "Axel Azhar Putra Ananca Fullstack Developer",
-    "AxellFumioo Laravel Developer", "Axel Azhar Putra Ananca Next.js Developer", "AxellFumioo PHP Developer",
-    "Axel Azhar Putra Ananca Coding Portfolio", "AxellFumioo Software Engineer", "Axel Azhar Putra Ananca Freelancer",
-    "AxellFumioo Tech Enthusiast", "Axel Azhar Putra Ananca UI/UX Designer", "AxellFumioo Indonesia Developer",
-    "Axel Azhar Putra Ananca Programmer", "AxellFumioo Web Designer", "Axel Azhar Putra Ananca Social Media Manager",
-    "AxellFumioo Content Creator", "Axel Azhar Putra Ananca Open Source Contributor", "AxellFumioo Tech Blogger",
-    "Axel Azhar Putra Ananca SEO Specialist", "AxellFumioo Custom Website Developer", "Axel Azhar Putra Ananca Online Shop Developer",
-    "AxellFumioo Fishing Store Developer", "Axel Azhar Putra Ananca E-commerce Developer", "AxellFumioo Personal Branding",
-    "Axel Azhar Putra Ananca Digital Creator", "AxellFumioo SMK Telkom Purwokerto", "Axel Azhar Putra Ananca Tailwind CSS Expert",
-    "AxellFumioo Livewire Developer", "Axel Azhar Putra Ananca Web Optimization", "AxellFumioo Professional Portfolio",
-    "Axel Azhar Putra Ananca Coding Enthusiast", "AxellFumioo JavaScript Developer", "Axel Azhar Putra Ananca Tech Innovator",
-    "AxellFumioo School Project Developer", "Axel Azhar Putra Ananca Career", "AxellFumioo Resume",
-    "Axel Azhar Putra Ananca CV", "AxellFumioo Biography", "Axel Azhar Putra Ananca Work Experience",
-    "AxellFumioo Projects", "Axel Azhar Putra Ananca Articles", "AxellFumioo Blog", "Axel Azhar Putra Ananca Coding Blog",
-    "AxellFumioo Coding Blog", "Axel Azhar Putra Ananca Tutorials", "AxellFumioo Tech Tutorials",
-    "Axel Azhar Putra Ananca Interview", "AxellFumioo Speaking Engagements", "Axel Azhar Putra Ananca SMK Telkom Purwokerto",
-    "AxellFumioo SMK Telkom Purwokerto", "Axel Azhar Putra Ananca Student at SMK Telkom Purwokerto",
-    "AxellFumioo SMK Telkom", "Axel Azhar Putra Ananca Alumni SMK Telkom Purwokerto",
-    "AxellFumioo SMK Telkom Purwokerto Projects", "Axel Azhar Putra Ananca SMK Telkom Purwokerto Web Developer",
-    "AxellFumioo School Website Developer", "Axel Azhar Putra Ananca Social Media Designer SMK Telkom Purwokerto"
+    "Axel Azhar Putra Ananca", "axellFumioo", "Axel Azhar Putra Ananca Portfolio", "axellFumioo Portfolio", "Axel Azhar Putra Ananca Website",
+    "axellFumioo Website", "Axel Azhar Putra Ananca Personal Website", "axellFumioo Personal Portfolio",
+    "Axel Azhar Putra Ananca LinkedIn", "axellFumioo LinkedIn", "Axel Azhar Putra Ananca GitHub",
+    "axellFumioo GitHub", "Axel Azhar Putra Ananca Twitter", "axellFumioo Twitter", "Axel Azhar Putra Ananca Instagram",
+    "axellFumioo Instagram", "Axel Azhar Putra Ananca Facebook", "axellFumioo Facebook", "Axel Azhar Putra Ananca YouTube",
+    "axellFumioo YouTube", "Axel Azhar Putra Ananca Social Media", "axellFumioo Social Media",
+    "Axel Azhar Putra Ananca Web Developer", "axellFumioo Web Developer", "Axel Azhar Putra Ananca Fullstack Developer",
+    "axellFumioo Laravel Developer", "Axel Azhar Putra Ananca Next.js Developer", "axellFumioo PHP Developer",
+    "Axel Azhar Putra Ananca Coding Portfolio", "axellFumioo Software Engineer", "Axel Azhar Putra Ananca Freelancer",
+    "axellFumioo Tech Enthusiast", "Axel Azhar Putra Ananca UI/UX Designer", "axellFumioo Indonesia Developer",
+    "Axel Azhar Putra Ananca Programmer", "axellFumioo Web Designer", "Axel Azhar Putra Ananca Social Media Manager",
+    "axellFumioo Content Creator", "Axel Azhar Putra Ananca Open Source Contributor", "axellFumioo Tech Blogger",
+    "Axel Azhar Putra Ananca SEO Specialist", "axellFumioo Custom Website Developer", "Axel Azhar Putra Ananca Online Shop Developer",
+    "axellFumioo Fishing Store Developer", "Axel Azhar Putra Ananca E-commerce Developer", "axellFumioo Personal Branding",
+    "Axel Azhar Putra Ananca Digital Creator", "axellFumioo SMK Telkom Purwokerto", "Axel Azhar Putra Ananca Tailwind CSS Expert",
+    "axellFumioo Livewire Developer", "Axel Azhar Putra Ananca Web Optimization", "axellFumioo Professional Portfolio",
+    "Axel Azhar Putra Ananca Coding Enthusiast", "axellFumioo JavaScript Developer", "Axel Azhar Putra Ananca Tech Innovator",
+    "axellFumioo School Project Developer", "Axel Azhar Putra Ananca Career", "axellFumioo Resume",
+    "Axel Azhar Putra Ananca CV", "axellFumioo Biography", "Axel Azhar Putra Ananca Work Experience",
+    "axellFumioo Projects", "Axel Azhar Putra Ananca Articles", "axellFumioo Blog", "Axel Azhar Putra Ananca Coding Blog",
+    "axellFumioo Coding Blog", "Axel Azhar Putra Ananca Tutorials", "axellFumioo Tech Tutorials",
+    "Axel Azhar Putra Ananca Interview", "axellFumioo Speaking Engagements", "Axel Azhar Putra Ananca SMK Telkom Purwokerto",
+    "axellFumioo SMK Telkom Purwokerto", "Axel Azhar Putra Ananca Student at SMK Telkom Purwokerto",
+    "axellFumioo SMK Telkom", "Axel Azhar Putra Ananca Alumni SMK Telkom Purwokerto",
+    "axellFumioo SMK Telkom Purwokerto Projects", "Axel Azhar Putra Ananca SMK Telkom Purwokerto Web Developer",
+    "axellFumioo School Website Developer", "Axel Azhar Putra Ananca Social Media Designer SMK Telkom Purwokerto", "axellFumioo Services", "Axel Azhar Putra Ananca Experience"
   ]
-  , 
 };
 
 export default function RootLayout({
@@ -57,6 +78,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <meta name="robots" content="index, follow" />
+        <meta name="author" content="Axel Azhar Putra Ananca" />
+        <meta name="theme-color" content="#ffffff" />
+      </head>
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         {children}
       </body>
