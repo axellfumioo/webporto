@@ -3,7 +3,6 @@ import { PrismaClient } from "@prisma/client";
 import { Redis } from "@upstash/redis";
 import { Ratelimit } from "@upstash/ratelimit";
 import crypto from "crypto";
-import sanitizeHtml from "sanitize-html";
 
 const prisma = new PrismaClient();
 const redis = new Redis({
@@ -65,12 +64,7 @@ export async function POST(request: Request) {
       );
     }
 
-    // Sanitize input to prevent XSS
-    const sanitizedMessage = sanitizeHtml(message, {
-      allowedTags: [],
-      allowedAttributes: {},
-    });
-
+    const sanitizedMessage = message.replace(/<[^>]*>?/gm, ""); // Remove HTML tags
     const messageHash = crypto.createHash("sha256").update(sanitizedMessage).digest("hex");
 
     const recentMessage = await redis.get(`message:${email}`);
