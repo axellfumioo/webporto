@@ -2,9 +2,8 @@ import { NextResponse } from "next/server";
 import { PrismaClient } from "@prisma/client";
 import { Redis } from "@upstash/redis";
 import { Ratelimit } from "@upstash/ratelimit";
-import rateLimit from "express-rate-limit";
-import sanitizeHtml from "sanitize-html";
 import crypto from "crypto";
+import sanitizeHtml from "sanitize-html";
 
 const prisma = new PrismaClient();
 const redis = new Redis({
