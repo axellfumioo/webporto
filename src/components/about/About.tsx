@@ -56,7 +56,6 @@ export default function Hero() {
                             Open to collaboration - let's build something amazing together! 🚀
                         </p>
                     </div>
-                    <Stack />
                 </div>
             </div>
         </div>

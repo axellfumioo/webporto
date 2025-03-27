@@ -1,11 +1,10 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
-
 "use client";
 import { motion } from 'framer-motion';
 import { Twitter, Instagram, Linkedin, Github, Twitch, Mail } from "lucide-react";
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import ReCAPTCHA from "react-google-recaptcha";
 
 interface ContactFormData {
     name: string;
@@ -14,9 +13,9 @@ interface ContactFormData {
 }
 
 export default function Hero() {
-    const [formData, setFormData] = useState<ContactFormData>({ name: '', email: '', message: '' });
+    const [formData, setFormData] = useState({ name: "", email: "", message: "" });
     const [isSubmitting, setIsSubmitting] = useState(false);
-    const [rateLimit, setRateLimit] = useState(false);
+    const recaptchaRef = useRef<ReCAPTCHA>(null);
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -24,39 +23,34 @@ export default function Hero() {
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        setRateLimit(false);
         setIsSubmitting(true);
 
         try {
-            const res = await fetch('/api/contact', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(formData),
+            const token = await recaptchaRef.current?.executeAsync();
+            if (!token) throw new Error("reCAPTCHA verification failed!");
+
+            const res = await fetch("/api/contact", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ ...formData, captchaToken: token }),
             });
 
             if (res.status === 429) {
-                setRateLimit(true);
-                toast.error('O-Ow... Too many requests, wait a bit!');
-                return;
+                throw new Error("O-Ow... Too many requests, wait a bit!");
             }
 
             const data = await res.json();
+            if (!res.ok) throw new Error(data.error || "Something went wrong. Try again!");
 
-            if (res.ok) {
-                setRateLimit(false);
-                toast.success('Message sent successfully! 🚀');
-                setFormData({ name: '', email: '', message: '' });
-            } else {
-                toast.error(data.error || 'Something went wrong. Try again!');
-            }
-
-        } catch (error) {
-            toast.error('Server error. Please try again later.');
+            toast.success("Message sent successfully! 🚀");
+            setFormData({ name: "", email: "", message: "" });
+        } catch (error: any) {
+            toast.error(error.message);
         } finally {
+            recaptchaRef.current?.reset();
             setIsSubmitting(false);
         }
     };
-
     return (
         <div className='z-40 mb-4 mt-20 md:mt-0'>
             <div className='flex flex-col space-y-4'>
@@ -97,12 +91,18 @@ export default function Hero() {
                     </div>
                     <textarea
                         placeholder="Message"
-                        className="w-full p-3 h-32 bg-[#2E2E2E] text-white rounded-md focus:outline-none focus:ring-2 focus:ring-gray-500 resize-none mb-4"
+                        className="w-full p-3 h-32 bg-[#2E2E2E] text-white rounded-md focus:outline-none focus:ring-2 focus:ring-gray-500 resize-none mb-2"
                         name='message'
                         value={formData.message}
                         onChange={handleChange}
                         disabled={isSubmitting}
                     ></textarea>
+                    <ReCAPTCHA ref={recaptchaRef} sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!} size="invisible" />
+                    <div className="text-xs text-gray-400 mb-2">
+                        This site is protected by reCAPTCHA and the Google{" "}
+                        <a href="https://policies.google.com/privacy" className="text-gray-300 hover:text-white transition">Privacy Policy</a> and{" "}
+                        <a href="https://policies.google.com/terms" className="text-gray-300 hover:text-white transition">Terms of Service</a> apply.
+                    </div>
                     <button
                         type="submit"
                         disabled={isSubmitting}
