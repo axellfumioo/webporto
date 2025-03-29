@@ -10,6 +10,9 @@ export async function POST(request: Request) {
   const verifyUrl = `https://www.google.com/recaptcha/api/siteverify?secret=${sitekey}&response=${captchaToken}`;
   const captchaRes = await fetch(verifyUrl, { method: "POST" });
   const captchaData = await captchaRes.json();
+  const fonnteToken = process.env.FONNTE_TOKEN;
+  const phoneNumber = process.env.PHONE_NUMBER;
+  const data = new FormData();
 
   if (!captchaToken) {
     return NextResponse.json(
@@ -62,7 +65,31 @@ export async function POST(request: Request) {
       );
     }
 
-    const sanitizedMessage = message.replace(/<[^>]*>?/gm, ""); // Remove HTML tags
+    const sanitizedMessage = message.replace(/<[^>]*>?/gm, "");
+
+    const compiledMessage = `New message from your website, here are the details:\n
+Name:
+${name}\n
+Email:
+${email}\n
+Message:
+${sanitizedMessage}`;
+
+    data.append("target", `${phoneNumber}`);
+    data.append("message", `${compiledMessage}`);
+    data.append("schedule", "0");
+    data.append("delay", "2");
+    data.append("countryCode", "62");
+
+    await fetch("https://api.fonnte.com/send", {
+      method: "POST",
+      mode: "cors",
+      headers: new Headers({
+        Authorization: `${fonnteToken}`,
+      }),
+      body: data,
+    });
+
     const contact = await prisma.contact.create({
       data: { name, email, message: sanitizedMessage },
     });
