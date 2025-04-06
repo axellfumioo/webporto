@@ -13,6 +13,7 @@
     "deploy": "wrangler pages deploy .next/output"
   },
   "dependencies": {
+    "@next/third-parties": "^15.2.4",
     "@prisma/client": "^6.5.0",
     "@radix-ui/react-slot": "^1.1.2",
     "@tailwindcss/postcss": "^4.0.9",
